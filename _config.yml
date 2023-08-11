@@ -1,0 +1,10 @@
+# Site settings
+title: Beining's Homepage
+author:
+  name: Beining Zhang
+  email: beiningzhang001@gmail.com
+description: Welcome to know more about me!
+
+# Build settings
+theme: jekyll-theme-minimal
+# remote_theme: jekyll/minima

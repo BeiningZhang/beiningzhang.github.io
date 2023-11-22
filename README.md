@@ -1,7 +1,7 @@
 # Data Scientist
 
 ### Education
-MORSE, Master Degree
+Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
 
 ### Work Experience
 **Data Scientist, London Stock Exchange Group, London**

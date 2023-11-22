@@ -22,4 +22,4 @@ Integrated Master with Honours in Mathematics, Operational Research, Statistics,
 
 
 ### Projects
-Topic Modelling for Beatles Lyrics
+[Topic Modelling for Beatles Lyrics](https://github.com/BeiningZhang/beatles-lyrics-analysis.git)

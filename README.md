@@ -1,4 +1,6 @@
-# Data Scientist
+# Hi, I'm Beining 👋👩🏻‍💻
+
+![Introduction](/assets/img/1withAvatar.png)
 
 ### Education
 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick

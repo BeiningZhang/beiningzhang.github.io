@@ -3,6 +3,9 @@
 ### Education
 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
 
+### Projects
+[Topic Modelling for Beatles Lyrics](https://github.com/BeiningZhang/beatles-lyrics-analysis.git)
+
 ### Work Experience
 **Data Scientist, London Stock Exchange Group, London**
 - Led the conception and implementation of the Operational Readiness Centre (ORC) project, revolutionizing the monitoring of capital market applications' health and market readiness. Achieved an 80% reduction in Mean Time to Detect (MTTD) issues and incidents, enhancing operational efficiency.
@@ -21,5 +24,3 @@ Integrated Master with Honours in Mathematics, Operational Research, Statistics,
 - Received a 95% satisfaction rating from key stakeholders, indicating high approval of the implemented solution and its effectiveness in addressing cross-company metric challenges. 
 
 
-### Projects
-[Topic Modelling for Beatles Lyrics](https://github.com/BeiningZhang/beatles-lyrics-analysis.git)

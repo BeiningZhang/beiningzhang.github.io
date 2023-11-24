@@ -1,6 +1,8 @@
-# Hi, I'm Beining 👋👩🏻‍💻
+# Hi all 👋 I'm Beining 👩🏻‍💻
 
-![Introduction](/assets/img/introduction.png)
+![Avatar](/assets/img/avatar.png){: align:"right" }
+
+Experienced Data Scientist 🚀 with 3+ years of experience in the financial industry 📈, specialising in data analytics and machine learning 📊.
 
 ### Education
 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick

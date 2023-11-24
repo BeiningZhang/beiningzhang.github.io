@@ -1,9 +1,8 @@
-<!-- # Hi all 👋 I'm Beining 👩🏻‍💻 <img align="right" width="200" src="assets/img/avatar.png"> -->
-<img src="assets/img/introduction.png">
-
-# Hi all 👋 I'm Beining 👩🏻‍💻
+# Hi all 👋 I'm Beining 👩🏻‍💻 <img align="right" width="200" src="assets/img/avatar.png">
 
 Experienced Data Scientist 🚀 with 3+ years of experience in the financial industry 📈, specialising in data analytics and machine learning 📊.
+
+[![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beiningzhang)
 
 ### Education
 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick

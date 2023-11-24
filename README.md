@@ -1,5 +1,7 @@
 <!-- # Hi all 👋 I'm Beining 👩🏻‍💻 <img align="right" width="200" src="assets/img/avatar.png"> -->
-# Hi all 👋 I'm Beining 👩🏻‍💻 <img src="assets/img/introduction.png">
+<img src="assets/img/introduction.png">
+
+# Hi all 👋 I'm Beining 👩🏻‍💻
 
 Experienced Data Scientist 🚀 with 3+ years of experience in the financial industry 📈, specialising in data analytics and machine learning 📊.
 

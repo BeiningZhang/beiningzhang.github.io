@@ -1,6 +1,6 @@
 # Hi all 👋 I'm Beining 👩🏻‍💻
 
-![Avatar](/assets/img/avatar.png){: align:"right" }
+![Avatar](/assets/img/avatar.png){: .align-right}
 
 Experienced Data Scientist 🚀 with 3+ years of experience in the financial industry 📈, specialising in data analytics and machine learning 📊.
 

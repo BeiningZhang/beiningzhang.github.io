@@ -27,3 +27,4 @@ Experienced Data Scientist 🚀 with 3+ years of experience in the financial ind
 - Received a 95% satisfaction rating from key stakeholders, indicating high approval of the implemented solution and its effectiveness in addressing cross-company metric challenges. 
 
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beining-zhang)

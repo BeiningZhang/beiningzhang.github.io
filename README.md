@@ -3,17 +3,17 @@
 Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track record in data analysis, statistical modeling, and machine learning 📊. Led projects that significantly enhanced operational efficiency, including an 80% reduction in Mean Time to Detect incidents at the London Stock Exchange Group. Proficient in Python, SQL, AWS and PowerBI, with a passion for driving strategic insights through data-driven decision-making.
 
 
-### Education
+## Education
 🎓 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
 
-### Projects
+## Projects
 [Topic Clustering for Lyrics Analysis 🎶](https://github.com/BeiningZhang/beatles-lyrics-analysis.git) 
 - Conducted Exploratory Data Analysis (EDA) and Sentiment Analysis on the lyrics.
 - Preprocessed data using Natural Language Processing (NLP).
 - Built an LDA topic modeling model to cluster songs and identify thematic patterns.
 
 
-### Work Experience
+## Work Experience
 **Data Scientist Intern, Stellar Fusion, London**
 - Led the development of the Fundamental Data Model, employing advanced ML techniques such as K-means clustering and NLP to categorise metrics for cross-company comparability across sectors and industries.
 - Managed efficient extraction and organisation of data from MongoDB using Python scripting, resulting in a significant 30% reduction in processing time, showcasing exceptional data handling and optimisation skills.
@@ -31,4 +31,7 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 - Mastered Object-Oriented and Functional Programming, Python, Data Modeling, SQL, and Machine Learning through rigorous training.
 - Achieved a 95% code quality score on an electronic trading platform script, demonstrating a commitment to high coding standards.
 
+## Connect with me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beining-zhang)
+[📞](tel:+447547987336)
+[📧](mailto:beiningzhang001@gmail.com)

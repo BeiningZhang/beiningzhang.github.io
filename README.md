@@ -32,6 +32,6 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 - Achieved a 95% code quality score on an electronic trading platform script, demonstrating a commitment to high coding standards.
 
 ## Connect with me
+[📞 (+44) 7547 987 336](tel:+447547987336)\
+[📧 beiningzhang001@gmail.com](mailto:beiningzhang001@gmail.com)\
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beining-zhang)
-[📞](tel:+447547987336)
-[📧](mailto:beiningzhang001@gmail.com)

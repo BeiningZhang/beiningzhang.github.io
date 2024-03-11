@@ -1,30 +1,30 @@
 # Hi all 👋 I'm Beining 👩🏻‍💻 <img align="right" width="200" src="assets/img/avatar.png">
 
-Experienced Data Scientist 🚀 with 3+ years of experience in the financial industry 📈, specialising in data analytics and machine learning 📊.
+Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track record in data analysis, statistical modeling, and machine learning 📊. Led projects that significantly enhanced operational efficiency, including an 80% reduction in Mean Time to Detect incidents at the London Stock Exchange Group. Proficient in Python, SQL, AWS and PowerBI, with a passion for driving strategic insights through data-driven decision-making.
 
 
 ### Education
 🎓 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
 
 ### Projects
-[Topic Modelling for Beatles Lyrics](https://github.com/BeiningZhang/beatles-lyrics-analysis.git)
+[Topic Clustering for Lyrics Analysis Lyrics](https://github.com/BeiningZhang/beatles-lyrics-analysis.git)
 
 ### Work Experience
+**Data Scientist Intern, Stellar Fusion, London**
+- Led the development of the Fundamental Data Model, employing advanced ML techniques such as K-means clustering and NLP to categorise metrics for cross-company comparability across sectors and industries.
+- Managed efficient extraction and organisation of data from MongoDB using Python scripting, resulting in a significant 30% reduction in processing time, showcasing exceptional data handling and optimisation skills.
+- Presented impactful proof of concept (PoC) ideas, earning unanimous positive feedback and driving project progression.
+- Recognised for outstanding performance and leadership contributions during the internship, demonstrating strong communication abilities.
+
 **Data Scientist, London Stock Exchange Group, London**
-- Led the conception and implementation of the Operational Readiness Centre (ORC) project, revolutionizing the monitoring of capital market applications' health and market readiness. Achieved an 80% reduction in Mean Time to Detect (MTTD) issues and incidents, enhancing operational efficiency.
-- Engineered a daily lifecycle monitor, revolutionizing data consolidation and cross-referencing from diverse sources. This resulted in a 50% reduction in data processing time, ensuring near real-time updates, and minimizing system collapse risks.
-- Developed and implemented an innovative email classification system, leveraging machine learning to autonomously generate cases from email content. Also, allocated cases to corresponding email groups based on a detailed analysis of email subject and body content, leading to a 40% improvement in workflow efficiency and a 20% faster resolution of issues.
+- Spearheaded the Operational Readiness Centre (ORC) project, revolutionising market monitoring practices by implementing predictive capabilities and automating operational checks, resulting in an 80% reduction in the meantime to detect incidents.
+- Led the migration of the ORC project to the AWS cloud computing environment, utilising services like S3, SageMaker, and Glue, integrated with Elastic Search for actionable insights, resulting in near-real-time updates and improved market stability.
+- Enhanced efficiency and reliability of Capital Market operations by expanding data sources to include incidents and alerts from Snowflake and DataDog databases, facilitating cross-departmental insights and automating incident escalation and resolution processes.
+- Contributed to an email classification system using LSTM neural networks, processing over 50,000 emails and achieving a classification accuracy of approximately 70%, demonstrating proficiency in ML algorithm development.
+
 
 **Data Scientist Trainee, Albany Beck, London**
-- Mastered Object-Oriented and Functional Programming, Python, Data Modeling, Data Warehousing, ETL Operations, SQL, Machine Learning, and Big Data concepts within an intensive training period, demonstrating a strong commitment to continuous learning.
-- Achieved a code quality score of 95% on the electronic trading platform script, demonstrating a commitment to high-quality coding standards.
-- Enhanced documentation quality by implementing a structured system, leading to a 30% increase in comprehension among trainees and project stakeholders.
-
-**Data Scientist Intern, Stellar Fusion, London**
-- Integrated data from 200+ companies, involving the extraction and processing of over 500,000 data points, resulting in a comprehensive dataset that surpassed initial expectations in terms of both size and complexity.
-- Reduced the time required for data extraction and processing by 30% through optimization techniques, streamlining the clustering process, and improving overall project efficiency.
-- Achieved a clustering accuracy of 90%, creating clear and distinct groups of comparable metrics within each sector and industry, enhancing the feasibility of cross-company metric comparison.
-- Received a 95% satisfaction rating from key stakeholders, indicating high approval of the implemented solution and its effectiveness in addressing cross-company metric challenges. 
-
+- Mastered Object-Oriented and Functional Programming, Python, Data Modeling, SQL, and Machine Learning through rigorous training.
+- Achieved a 95% code quality score on an electronic trading platform script, demonstrating a commitment to high coding standards.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/beining-zhang)

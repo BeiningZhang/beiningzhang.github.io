@@ -1,9 +1,3 @@
----
-title: Home
-layout: Minimal
-filename: index.md
---- 
-
 # Hi all 👋 I'm Beining 👩🏻‍💻 <img align="right" width="200" src="assets/img/avatar.png">
 
 Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track record in data analysis, statistical modeling, and machine learning 📊. Led projects that significantly enhanced operational efficiency, including an 80% reduction in Mean Time to Detect incidents at the London Stock Exchange Group. Proficient in Python, SQL, AWS and PowerBI, with a passion for driving strategic insights through data-driven decision-making.

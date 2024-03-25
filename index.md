@@ -1,6 +1,5 @@
 ---
-title: Home
-layout: Minimal
+title: Beining Zhang
 filename: index.md
 --- 
 

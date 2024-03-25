@@ -11,7 +11,7 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 ## Education
 🎓 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
 
-## Projects
+## [Projects](https://beiningzhang.github.io/project)
 [Topic Clustering for Lyrics Analysis 🎶](https://github.com/BeiningZhang/beatles-lyrics-analysis.git) 
 - Conducted Exploratory Data Analysis (EDA) and Sentiment Analysis on the lyrics.
 - Preprocessed data using Natural Language Processing (NLP).

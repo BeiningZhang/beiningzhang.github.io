@@ -10,7 +10,7 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 
 ## [View my Resume](https://beiningzhang.github.io/resume)
 
-## [My Projects](https://beiningzhang.github.io/project)
+## My Projects
 [Topic Clustering for Lyrics Analysis 🎶](https://github.com/BeiningZhang/beatles-lyrics-analysis.git) 
 - Conducted Exploratory Data Analysis (EDA) and Sentiment Analysis on the lyrics.
 - Preprocessed data using Natural Language Processing (NLP).

@@ -8,7 +8,7 @@ filename: index.md
 Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track record in data analysis, statistical modeling, and machine learning 📊. Led projects that significantly enhanced operational efficiency, including an 80% reduction in Mean Time to Detect incidents at the London Stock Exchange Group. Proficient in Python, SQL, AWS and PowerBI, with a passion for driving strategic insights through data-driven decision-making.
 
 
-## [View my Resume](https://beiningzhang.github.io/resume)
+[View my Resume](https://beiningzhang.github.io/resume)
 
 ## My Projects
 [Topic Clustering for Lyrics Analysis 🎶](https://github.com/BeiningZhang/beatles-lyrics-analysis.git) 

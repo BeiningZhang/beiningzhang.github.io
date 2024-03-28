@@ -15,4 +15,4 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 ## Connect with me
 [📞 (+44) 7547 987 336](tel:+447547987336)\
 [📧 beiningzhang001@gmail.com](mailto:beiningzhang001@gmail.com)\
-[<img src="assets/img/LI-In-Bug.png" width="18"/> LinkedIn](https://www.linkedin.com/in/beining-zhang)
+[<img src="assets/img/LI-In-Bug.png" width="20"/> LinkedIn](https://www.linkedin.com/in/beining-zhang)

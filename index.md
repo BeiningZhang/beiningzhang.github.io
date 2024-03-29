@@ -15,6 +15,9 @@ Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track 
 - Preprocessed data using Natural Language Processing (NLP).
 - Built an LDA topic modeling model to cluster songs and identify thematic patterns.
 
+[PowerPoint Presentation Updater](https://github.com/BeiningZhang/ppt-presentation-updater)
+- Engineered a Python script utilizing `python-pptx` to automate the updating of specific values within PowerPoint presentations, enhancing efficiency in managing and replacing placeholder data.
+
 
 ## Connect with me
 [📞 (+44) 7547 987 336](tel:+447547987336)\

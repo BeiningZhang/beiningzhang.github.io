@@ -4,9 +4,9 @@ filename: resume.md
 --- 
 
 ## Education
-**🎓 Master with Honours, University of Warwick, Coventry**
-**Course:** Bachelor of Science, Master of Mathematics, Operational Research, Statistics, and Economics (Actuarial and Financial Mathematics Stream) 
-**Grade:** Upper Second Class Honours (2:1)
+**🎓 Master with Honours, University of Warwick, Coventry**\
+**Course:** Bachelor of Science, Master of Mathematics, Operational Research, Statistics, and Economics (Actuarial and Financial Mathematics Stream) \
+**Grade:** Upper Second Class Honours (2:1)\
 **Key Modules:**
 - Quantitative Economics
 - Mathematical Finance
@@ -15,9 +15,9 @@ filename: resume.md
 - Multivariate Statistics
 - Applied Statistical Modeling
 - Programming for Data Science
-- Actuarial Methods (Actuarial exemptions offered for some of the modules by IFoA)
+- Actuarial Methods (Actuarial exemptions offered for some of the modules by IFoA)\
 **Dissertation:**
-- “Modeling of Systemic Risk”: Explored the role of densely connected financial networks in financial stability and shock propagation.
+- “Modeling of Systemic Risk”: Explored the role of densely connected financial networks in financial stability and shock propagation.\
 **Internship Experience:**
 - Consultant at Tata Chemicals: Led business modeling, risk assessment, and market research for strategic investment decisions, emphasising sustainability and growth.
 

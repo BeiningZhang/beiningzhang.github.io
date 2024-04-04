@@ -4,7 +4,23 @@ filename: resume.md
 --- 
 
 ## Education
-🎓 Integrated Master with Honours in Mathematics, Operational Research, Statistics, and Economics at University of Warwick
+**🎓 Master with Honours, University of Warwick, Coventry**
+**Course:** Bachelor of Science, Master of Mathematics, Operational Research, Statistics, and Economics (Actuarial and Financial Mathematics Stream) 
+**Grade:** Upper Second Class Honours (2:1)
+**Key Modules:**
+- Quantitative Economics
+- Mathematical Finance
+- Stochastic Methods in Finance
+- Probability Theory
+- Multivariate Statistics
+- Applied Statistical Modeling
+- Programming for Data Science
+- Actuarial Methods (Actuarial exemptions offered for some of the modules by IFoA)
+**Dissertation:**
+- “Modeling of Systemic Risk”: Explored the role of densely connected financial networks in financial stability and shock propagation.
+**Internship Experience:**
+- Consultant at Tata Chemicals: Led business modeling, risk assessment, and market research for strategic investment decisions, emphasising sustainability and growth.
+
 
 ## Work Experience
 **Data Scientist Intern, Stellar Fusion, London**

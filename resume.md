@@ -8,7 +8,6 @@ filename: resume.md
 
 **Course:** Bachelor of Science, Master of Mathematics, Operational Research, Statistics, and Economics (Actuarial and Financial Mathematics Stream)
 
-**Grade:** Upper Second Class Honours (2:1)
 
 **Key Modules:**
 - Quantitative Economics

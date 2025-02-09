@@ -3,9 +3,9 @@ title: Beining Zhang
 filename: index.md
 --- 
 
-# Hi all 👋 I'm Beining 👩🏻‍💻
-Data Scientist 🚀 with 1+ years in financial industry 📈 and a proven track record in data analysis, statistical modeling, and machine learning 📊. Led projects that significantly enhanced operational efficiency, including an 80% reduction in Mean Time to Detect incidents at the London Stock Exchange Group. Proficient in Python, SQL, AWS and PowerBI, with a passion for driving strategic insights through data-driven decision-making.
+Beining Zhang is a prospective PhD student in the Agents, Interaction and Complexity (AIC) research group in the Department of Electronics and Computer Science (ECS) at the University of Southampton. She holds a BSc and MSc in Mathematics, Operational Research, Statistics, and Economics (MORSE) from the University of Warwick.
 
+Her research investigates how AI can help address major challenges in human cooperation. In particular, she uses techniques such as large language models and reinforcement learning to identify mutually beneficial agreements, ultimately enhancing collective decision-making in mixed-motive settings where the involved parties may have conflicting interests.
 
 [View my Resume](https://beiningzhang.github.io/resume)
 

@@ -1,6 +1,8 @@
 ---
+layout: page
 title: Resume
 filename: resume.md
+permalink: /resume/
 --- 
 
 ## Education

@@ -1,6 +1,8 @@
 ---
+layout: page
 title: Project
 filename: project.md
+permalink: /project/
 --- 
 
 [Topic Clustering for Lyrics Analysis 🎶](https://github.com/BeiningZhang/beatles-lyrics-analysis.git) 

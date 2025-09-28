@@ -9,11 +9,12 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Home" # Your Name / Site Title
+title                    : "Beining Zhang" # Your Name / Site Title
 title_separator          : "-"
 name                     : &name "Beining Zhang"
-description              : &description "personal description"
-url                      : https://beiningzhang.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+description              : &description "Beining Zhang's personal website"
+keywords                 : [AI, LLM, multi-agent, publications, research]
+url                      : "https://beiningzhang.github.io" # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "BeiningZhang/beiningzhang.github.io"
 
@@ -307,6 +308,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-seo-tag
   - jemoji
 
 # Mimic GitHub Pages with --safe

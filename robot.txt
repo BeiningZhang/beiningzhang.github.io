@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://beiningzhang.github.io/sitemap.xml

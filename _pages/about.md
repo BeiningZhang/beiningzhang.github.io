@@ -7,8 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-Beining Zhang is a researcher in Artificial Intelligence, specialising in large language models and multi-agent systems.
-
-As a former data scientist at the London Stock Exchange Group, she led the transformative Operational Readiness Centre project, improving the operational efficiency of trading systems through advanced machine learning. Her passion for AI-driven approaches extends to health system innovations, where she contributed to the health research investment analysis project for the Lancet Oncology Commission on Cancer in the Commonwealth. Within the project, she co-led the development of the data annotation automation framework based on large language models and advanced machine learning algorithms—significantly reducing human review efforts.
-
-Joining the Harvard Health Systems Innovation Lab, Beining brings her expertise in artificial intelligence and data-driven methodologies to advance health system innovation and operational excellence.
+Beining Zhang is a passionate AI Researcher striving to design pro-social, human-centred AI systems that amplify human capabilities, uphold fairness and safety, and contribute to a more equitable and empowering future. In the study of global health research-investment analysis in The Lancet Oncology, Beining transformed the legacy data annotation system into an agile, highly-adaptable workflow with Generative AI. This approach accelerated research lifecycle and enabled decision-makers to spot trends, allocate resources, and act on evidence in near real time. Looking forward, as the cofounder of AInotate, Beining envisions an AI-assisted data curation platform shortening research and model development lifecycle, democratising high-quality datasets beyond big tech—accelerating responsible AI in healthcare, science, and public services worldwide.

@@ -5,16 +5,64 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
+layout: splash
+header:
+  overlay_image: "hero-gradient.svg"
+  overlay_filter: "rgba(17, 24, 39, 0.55)"
+  overlay_color: "#111827"
+  hero_avatar: "profile.png"
+  ctas:
+    - label: "CV"
+      url: "/cv/"
+      class: "btn--primary"
+    - label: "Publications"
+      url: "/publications/"
+      class: "btn--light-outline"
+    - label: "Email"
+      url: "mailto:beiningzhang001@gmail.com"
+      class: "btn--light-outline"
+excerpt: "AI/ML Engineer + Researcher building grounded LLM systems."
+
+feature_row:
+  - title: "Grounded RAG systems in high-stakes domains"
+    excerpt: "Production LLM pipelines with claim-first retrieval, inline citations, and measurable quality improvements."
+    url: "/cv/"
+    btn_label: "See experience"
+    btn_class: "btn--primary"
+  - title: "LLM evaluation & monitoring"
+    excerpt: "Evaluation frameworks, router audits, and feedback loops to keep agentic systems reliable over time."
+    url: "/publications/"
+    btn_label: "See publications"
+    btn_class: "btn--primary"
+  - title: "Medical research classification at scale"
+    excerpt: "High-agreement classification at 200k-record scale with precision-first abstention to focus experts on ambiguity."
+    url: "/cv/"
+    btn_label: "See details"
+    btn_class: "btn--primary"
 ---
 
-My mission: build AI systems that are reliable, grounded, and deployable — not just technically impressive.
+<div class="metrics-strip" aria-label="Key highlights">
+  <span class="metric-chip">200k records</span>
+  <span class="metric-chip">93% agreement</span>
+  <span class="metric-chip">80% faster detection</span>
+</div>
 
-I design and ship end-to-end LLM pipelines in production environments where failure has real consequences: financial intelligence platforms where a hallucinated fact misleads an investment decision, or medical research where a misclassification skews policy. That tension between capability and trust is where my work lives.
+## Selected Projects / Case Studies
 
-At Savantiq, I architected a unified RAG pipeline that replaced fragmented LLM calls across an investment intelligence platform — covering query optimisation, claim-based retrieval, inline citation, and entity resolution. At Harvard's Health System Innovation Lab, I built a few-shot LLM classifier that automated classification of a 200,000-record cancer research dataset with 93% human-machine agreement, contributing to a co-authored publication in The Lancet Oncology. At LSEG, I led the Operational Readiness Centre project, reducing critical incident detection time by 80% through automated, real-time market monitoring pipelines.
+{% include feature_row %}
 
-My research extends this into the theoretical: I design evaluation frameworks for LLM agents in multi-agent systems (MAS) and study the governance and ethics of agentic AI.
+## Research Focus
 
-I work at the intersection of ML engineering and applied research — shipping robust systems while staying anchored to the open questions that matter.
+- LLM agent evaluation in mixed-motive and cooperative settings
+- Governance, explainability, and participatory design for agentic systems
+- Grounded generation: claim-first retrieval, citation, and uncertainty handling
+- Quality monitoring: feedback loops, evaluation harnesses, and failure analysis
+
+## Contact
 
 Open to: research collaborations on trustworthy AI, and speaking on LLM systems in high-stakes domains.
+
+<p class="home-hero__cta">
+  <a class="btn btn--primary" href="mailto:beiningzhang001@gmail.com">Email</a>
+  <a class="btn btn--inverse" href="https://www.linkedin.com/in/beiningzhang">LinkedIn</a>
+</p>

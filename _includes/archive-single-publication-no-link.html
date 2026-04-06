@@ -28,6 +28,13 @@
 
     <h2 class="archive__item-title" itemprop="headline">{{ title }}</h2>
 
+    {% if post.pub_type %}
+      <p class="pubs__meta">
+        <span class="pub-chip">{{ post.pub_type | capitalize }}</span>
+        <span class="pub-chip">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+      </p>
+    {% endif %}
+
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}

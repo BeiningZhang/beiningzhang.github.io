@@ -11,6 +11,15 @@ author_profile: true
 
 {% include base_path %}
 
+<div class="pubs-selected">
+  <h2>Selected publications</h2><hr />
+  <ul class="pubs-selected__list">
+    <li><a href="https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(25)00338-9/abstract">Public and Philanthropic Research Funding, Publications and Research Networks for Cancer in the Commonwealth and Globally in 2016-2023: Comparative Analysis</a> <span class="pub-chip">Journal</span> <span class="pub-chip">2025</span></li>
+    <li><a href="https://openreview.net/forum?id=yG4Fj0voJZ">Evaluating generalization capabilities of LLM-based agents in mixed-motive scenarios using Concordia</a> <span class="pub-chip">Conference</span> <span class="pub-chip">2025</span></li>
+    <li><a href="https://arxiv.org/abs/2602.08554">Three Lessons from Citizen-Centric Participatory AI Design</a> <span class="pub-chip">Workshop</span> <span class="pub-chip">2026</span></li>
+  </ul>
+</div>
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
@@ -31,5 +40,4 @@ author_profile: true
     {% include archive-single-publication-no-link.html %}
   {% endfor %}
 {% endif %}
-
 

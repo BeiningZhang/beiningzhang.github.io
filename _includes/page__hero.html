@@ -12,6 +12,8 @@
   {% capture cta_path %}{{ page.header.cta_url | prepend: base_path }}{% endcapture %}
 {% endif %}
 
+{% assign hero_ctas = page.header.ctas %}
+
 {% if page.header.overlay_image contains "://" %}
   {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
 {% elsif page.header.overlay_image %}
@@ -24,27 +26,54 @@
   {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
 {% endif %}
 
+{% if page.header.hero_avatar contains "://" %}
+  {% capture hero_avatar_path %}{{ page.header.hero_avatar }}{% endcapture %}
+{% elsif page.header.hero_avatar %}
+  {% capture hero_avatar_path %}{{ page.header.hero_avatar | prepend: "/images/" | prepend: base_path }}{% endcapture %}
+{% endif %}
+
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}"
 >
   {% if page.header.overlay_color or page.header.overlay_image %}
     <div class="wrapper">
-      <h1 class="page__title" itemprop="headline">
-        {% if paginator %}
-          {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
-        {% else %}
-          {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+      <div class="hero__inner{% if hero_avatar_path %} hero__inner--with-avatar{% endif %}">
+        <div class="hero__content">
+          <h1 class="page__title" itemprop="headline">
+            {% if paginator %}
+              {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
+            {% else %}
+              {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+            {% endif %}
+          </h1>
+          {% if page.excerpt %}
+            <p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+          {% endif %}
+          {% if site.read_time and page.read_time %}
+            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+          {% endif %}
+          {% if hero_ctas %}
+            <p class="hero__ctas">
+              {% for cta in hero_ctas %}
+                {% if cta.url contains "://" or cta.url contains "mailto:" or cta.url contains "tel:" %}
+                  {% assign hero_cta_path = cta.url %}
+                {% else %}
+                  {% assign hero_cta_path = cta.url | prepend: base_path %}
+                {% endif %}
+                <a href="{{ hero_cta_path }}" class="btn {{ cta.class | default: 'btn--light-outline' }}">{{ cta.label }}</a>
+              {% endfor %}
+            </p>
+          {% elsif page.header.cta_url %}
+            <p><a href="{{ cta_path }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+          {% endif %}
+        </div>
+
+        {% if hero_avatar_path %}
+          <div class="hero__avatar" aria-hidden="true">
+            <img src="{{ hero_avatar_path }}" alt="" />
+          </div>
         {% endif %}
-      </h1>
-      {% if page.excerpt %}
-        <p class="page__lead">{{ page.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
-      {% endif %}
-      {% if site.read_time and page.read_time %}
-        <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-      {% endif %}
-      {% if page.header.cta_url %}
-        <p><a href="{{ cta_path }}" class="btn btn--light-outline btn--large">{{ page.header.cta_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
-      {% endif %}
+      </div>
     </div>
   {% else %}
     <img src="{{ img_path }}" alt="{{ page.title }}" class="page__hero-image">

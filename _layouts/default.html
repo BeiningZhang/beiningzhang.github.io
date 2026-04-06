@@ -12,6 +12,13 @@ layout: compress
   </head>
 
   <body>
+    <script>
+      try {
+        if (localStorage.getItem("nav_collapsed") === "1") {
+          document.body.classList.add("nav-collapsed");
+        }
+      } catch (e) {}
+    </script>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}

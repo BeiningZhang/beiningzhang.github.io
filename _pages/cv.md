@@ -76,9 +76,10 @@ Cooperative AI Foundation | Marlow, UK | Jul 2025
 
 ---
 
-**[1]** *Public and philanthropic research funding for cancer in the Commonwealth*, The Lancet Oncology 26(9), 2025
-**[2]** *Evaluating Generalization Capabilities of LLM-Based Agents in Mixed-Motive Scenarios Using Concordia*, Accepted at NeurIPS Datasets and Benchmarks Track (2025)
-**[3]** *Anticipating Opportunities and Threats in Participatory Agentic Design*, Under review at ACM CHI Conference on Human-Computer Interaction (CHI)
+**[1]** *Public and philanthropic research funding, publications, and research networks for cancer in the Commonwealth and globally between 2016 and 2023: a comparative analysis*, The Lancet Oncology 26(9), e466–e476, 2025
+**[2]** *Evaluating generalization capabilities of LLM-based agents in mixed-motive scenarios using Concordia*, arXiv preprint arXiv:2512.03318, 2025
+**[3]** *Three Lessons from Citizen-Centric Participatory AI Design*, arXiv preprint arXiv:2602.08554, 2026
+**[4]** *Multiagent systems based on large language models: a citizen-centric perspective*, 2025
 
 
 💡 **I have right to work in the UK. I will not require sponsorship for employment visa status now or in the future.**

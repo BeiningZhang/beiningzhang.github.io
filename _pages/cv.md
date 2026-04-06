@@ -13,27 +13,42 @@ redirect_from:
 
 ---
 
-**Research Collaborator** (Joint work with University of Southampton)
-Harvard Health System Innovation Lab | Harvard University | Boston, USA | Nov 2024 - Present
+**AI/ML Engineer — Building the AI core of an investment intelligence platform**
+Savantiq | Jan 2026 – Present
 
-- **Dramatically reduced human labelling effort by over 40%** by leading the development of an LLM-powered data annotation pipeline. This system processed and classified a 200,000-record dataset for the health research investment analysis project for the *Lancet Oncology Commission*, achieving a 93% human-machine agreement rate. **[1]**
+- Architected a unified RAG pipeline (Python/Django) powering chat, memo generation, AI summaries, and research pages — replacing fragmented LLM calls with a modular system covering query optimisation, claim-based retrieval, and grounded answer synthesis with inline citation.
+- Designed a claim-first retrieval architecture to eliminate context contamination, integrating AWS Bedrock via a new multi-provider AI client (Azure OpenAI + Bedrock), improving answer consistency and reducing hallucination.
+- Led migration of legacy chat entrypoint to a modular SmartRouter → ChatPipeline architecture, eliminating a dual-entrypoint system with a full test and rollout plan.
+- Built an LLM evaluation framework capturing router decisions, retrieved context, and user feedback — enabling proactive quality monitoring rather than reactive incident response.
 
-**Research Assistant**
-School of Electronics and Computer Science | University of Southampton | Southampton, UK | June 2024 - Present
+**Research Collaborator — Automated medical research classification at scale**
+Harvard Health System Innovation Lab | Nov 2024 – Present
 
-- Achieved top ranking in the Concordia Contest 2024 by designing and presenting novel LLM agent architecture for cooperative multi-agent interaction and autonomous decision-making. **[2]**
-- Conducted Human-AI Interaction research on designing trustworthy AI systems, with a focus on explainability, AI ethics, governance, and public engagement. **[3]**
+- Built a few-shot LLM classifier (GPT-4o-mini + RF ensemble) that automated classification of a 200,000-record cancer research dataset with 93% human-machine agreement — reducing manual labelling effort by over 80%.
+- Designed a precision-first abstention mechanism that eliminated human verification of positive decisions, enabling clinical experts to focus on genuinely ambiguous cases.
+- Co-authored: *Public and philanthropic research funding for cancer in the Commonwealth*, The Lancet Oncology 26(9), 2025. **[1]**
+- Invited to the Lancet Commissioners meeting to advise on AI's role in global cancer control and research equity.
 
-**Data Science Intern**
-Stellar Fusion | London, UK | Aug 2023 - Oct 2023
+**Research Assistant — AI agent evaluation and governance research**
+University of Southampton | Jun 2024 – Present
 
-- **Accelerated data readiness and ensured data integrity** by developing a robust SQL and Python pipeline to ingest, clean, and structure diverse financial metrics from SEC filings and MongoDB company data.
-- **Enabled faster, data-driven investment decisions** by automating report analysis using unsupervised Machine Learning (K-Means clustering) and Natural Language Processing (NLP).
+- Achieved top ranking at the Concordia Contest 2024 with a novel LLM agent architecture for cooperative multi-agent interaction — published at NeurIPS Datasets and Benchmarks Track 2025. **[2]**
+- Researching AI governance, explainability, and public engagement in participatory agentic system design — paper under review at ACM CHI. **[3]**
+- Selected for the Cooperative AI Summer School 2025; developed evaluation metrics for exploitability in multi-agent systems.
 
-**Data Science Consultant**
-London Stock Exchange Group | London, UK | May 2022 - Jul 2023
+**Data Science Intern — Financial metrics analysis from SEC filings**
+Stellar Fusion | Aug 2023 – Oct 2023
 
-- **Significantly enhanced trading system operational efficiency** by leading the Operational Readiness Centre project. This initiative reduced critical incident detection time by 30% through the development of automated, real-time market health monitoring pipelines using AWS (S3, Glue, SageMaker) and delivering actionable insights via PowerBI.
+- Built a Python/SQL pipeline to ingest, clean, and structure financial metrics from SEC filings and MongoDB company data across 500+ company records.
+- Automated cross-sector metric comparisons using K-means clustering and TF-IDF NLP — presented as a proof of concept to senior stakeholders.
+
+**Data Science Consultant — Real-time market monitoring at infrastructure scale**
+LSEG | May 2022 – Jul 2023
+
+- Led the Operational Readiness Centre project — reduced critical incident detection time by 80% through automated, real-time market health monitoring pipelines (AWS S3, Glue, SageMaker, ElasticSearch, Snowflake, ServiceNow).
+- Built end-to-end data pipelines across 5+ source systems, delivering operational insights via PowerBI and Kibana to Capital Markets stakeholders.
+- Prototyped a predictive delay-detection model using AWS SageMaker, extending the system from reactive monitoring to proactive incident prevention.
+- Developed an LSTM-based email classifier (85% accuracy) reducing mean client response time by 25%.
 
 ## Education
 
@@ -61,7 +76,7 @@ Cooperative AI Foundation | Marlow, UK | Jul 2025
 
 ---
 
-**[1]** *Public and philanthropic research funding, publications, and research networks for cancer in the Commonwealth and globally between 2016 and 2023: a comparative analysis*, The Lancet Oncology 26(9), 466-476 (2025)
+**[1]** *Public and philanthropic research funding for cancer in the Commonwealth*, The Lancet Oncology 26(9), 2025
 **[2]** *Evaluating Generalization Capabilities of LLM-Based Agents in Mixed-Motive Scenarios Using Concordia*, Accepted at NeurIPS Datasets and Benchmarks Track (2025)
 **[3]** *Anticipating Opportunities and Threats in Participatory Agentic Design*, Under review at ACM CHI Conference on Human-Computer Interaction (CHI)
 

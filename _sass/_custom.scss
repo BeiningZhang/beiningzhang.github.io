@@ -1,0 +1,26 @@
+.archive--cv,
+.archive--publications {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.archive--cv .page__title,
+.archive--publications .page__title {
+  font-size: 1.75rem;
+}
+
+.archive--cv h2,
+.archive--publications h2 {
+  font-size: 1.35rem;
+}
+
+.archive--cv .archive__item-title,
+.archive--publications .archive__item-title {
+  font-size: 1.15rem;
+  cursor: default;
+}
+
+.archive--publications .archive__item:hover .archive__item-title,
+.archive--cv .archive__item:hover .archive__item-title {
+  text-decoration: none;
+}

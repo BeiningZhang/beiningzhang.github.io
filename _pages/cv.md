@@ -26,7 +26,7 @@ Harvard Health System Innovation Lab | Nov 2024 – Present
 
 - Built a few-shot LLM classifier (GPT-4o-mini + RF ensemble) that automated classification of a 200,000-record cancer research dataset with 93% human-machine agreement — reducing manual labelling effort by over 80%.
 - Designed a precision-first abstention mechanism that eliminated human verification of positive decisions, enabling clinical experts to focus on genuinely ambiguous cases.
-- Co-authored: *Public and philanthropic research funding for cancer in the Commonwealth*, The Lancet Oncology 26(9), 2025. **[1]**
+- Co-authored: *Public and philanthropic research funding, publications, and research networks for cancer in the Commonwealth and globally between 2016 and 2023: a comparative analysis*, The Lancet Oncology 26(9), e466–e476, 2025. **[1]**
 - Invited to the Lancet Commissioners meeting to advise on AI's role in global cancer control and research equity.
 
 **Research Assistant — AI agent evaluation and governance research**
@@ -77,9 +77,9 @@ Cooperative AI Foundation | Marlow, UK | Jul 2025
 ---
 
 **[1]** *Public and philanthropic research funding, publications, and research networks for cancer in the Commonwealth and globally between 2016 and 2023: a comparative analysis*, The Lancet Oncology 26(9), e466–e476, 2025
-**[2]** *Evaluating generalization capabilities of LLM-based agents in mixed-motive scenarios using Concordia*, arXiv preprint arXiv:2512.03318, 2025
-**[3]** *Three Lessons from Citizen-Centric Participatory AI Design*, arXiv preprint arXiv:2602.08554, 2026
-**[4]** *Multiagent systems based on large language models: a citizen-centric perspective*, 2025
+**[2]** *Evaluating generalization capabilities of LLM-based agents in mixed-motive scenarios using Concordia*, NeurIPS 2025 Datasets and Benchmarks Track, 2025
+**[3]** *Three Lessons from Citizen-Centric Participatory AI Design*, PARTICIPATE-AI (IUI ’26 Workshop), 2026
+**[4]** *Multiagent systems based on large language models: a citizen-centric perspective*, Rethinking Multi-Agent Systems in the Era of LLMs (Workshop), University of Oxford, 2025
 
 
 💡 **I have right to work in the UK. I will not require sponsorship for employment visa status now or in the future.**

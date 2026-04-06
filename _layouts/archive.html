@@ -15,7 +15,7 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <div class="archive{% if page.permalink == '/cv/' %} archive--cv{% endif %}{% if page.permalink == '/publications/' %} archive--publications{% endif %}{% if page.permalink == '/portfolio/' %} archive--portfolio{% endif %}">
+  <div class="archive{% if page.author_profile == false and page.sidebar == nil %} archive--full{% endif %}{% if page.permalink == '/cv/' %} archive--cv{% endif %}{% if page.permalink == '/publications/' %} archive--publications{% endif %}{% if page.permalink == '/portfolio/' %} archive--portfolio{% endif %}">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 class="page__title">{{ page.title }}</h1>
     {% endunless %}

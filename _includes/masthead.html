@@ -1,26 +1,50 @@
 {% include base_path %}
 
-<div class="masthead">
+<div class="masthead masthead--sidebar">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+    <nav id="site-nav" class="side-nav" aria-label="Primary">
+      <button id="nav-toggle" class="side-nav__toggle" type="button" aria-label="Toggle navigation">
+        <span class="side-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <a class="side-nav__brand" href="{{ base_path }}/">
+        <span class="side-nav__text">Home</span>
+        <span class="side-nav__short" aria-hidden="true">H</span>
+      </a>
+
+      <ul class="side-nav__links">
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = base_path %}
+          {% endif %}
+
+          <li class="side-nav__item">
+            <a class="side-nav__link" href="{{ domain }}{{ link.url }}">
+              <span class="side-nav__text">{{ link.title }}</span>
+              {% if link.title == 'CV' %}
+                <span class="side-nav__short" aria-hidden="true">CV</span>
+              {% elsif link.title == 'Publications' %}
+                <span class="side-nav__short" aria-hidden="true">Pub</span>
+              {% elsif link.title == 'Projects' %}
+                <span class="side-nav__short" aria-hidden="true">Prj</span>
+              {% elsif link.title == 'Talks' %}
+                <span class="side-nav__short" aria-hidden="true">Tlk</span>
+              {% else %}
+                <span class="side-nav__short" aria-hidden="true">{{ link.title | slice: 0, 3 }}</span>
+              {% endif %}
+            </a>
           </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+        {% endfor %}
+      </ul>
+
+      <div class="side-nav__footer">
+        <button id="theme-toggle" class="side-nav__theme" type="button" aria-label="Toggle theme">
+          <span id="theme-icon" class="side-nav__theme-icon" aria-hidden="true" title="toggle theme"></span>
+          <span class="side-nav__text">Theme</span>
+        </button>
+      </div>
+    </nav>
   </div>
 </div>

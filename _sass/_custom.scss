@@ -193,6 +193,15 @@ body.nav-collapsed .side-nav__links {
   display: none;
 }
 
+/* Keep hero content alignment stable across sidebar widths */
+.page__hero--overlay .wrapper {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: var(--content-pad);
+  padding-right: var(--content-pad);
+}
+
 /* On small screens, default to collapsed width */
 @media (max-width: 925px) {
   body {

@@ -19,6 +19,14 @@ function initSideNav() {
     localStorage.setItem(NAV_COLLAPSED_KEY, next ? "1" : "0");
     setNavCollapsed(next);
   });
+
+  // Always expand after navigating via sidebar links (including Cmd/Ctrl+click).
+  document.querySelectorAll(".side-nav__link").forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem(NAV_COLLAPSED_KEY, "0");
+      setNavCollapsed(false);
+    });
+  });
 }
 
 function setTheme(theme) {

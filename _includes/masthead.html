@@ -7,12 +7,13 @@
         <span class="side-nav__toggle-icon" aria-hidden="true"></span>
       </button>
 
-      <a class="side-nav__brand" href="{{ base_path }}/">
-        <span class="side-nav__text">Home</span>
-        <span class="side-nav__short" aria-hidden="true">H</span>
-      </a>
-
       <ul class="side-nav__links">
+        <li class="side-nav__item">
+          <a class="side-nav__link" href="{{ base_path }}/">
+            <span class="side-nav__text">Home</span>
+          </a>
+        </li>
+
         {% for link in site.data.navigation.main %}
           {% if link.url contains 'http' %}
             {% assign domain = '' %}
@@ -23,17 +24,6 @@
           <li class="side-nav__item">
             <a class="side-nav__link" href="{{ domain }}{{ link.url }}">
               <span class="side-nav__text">{{ link.title }}</span>
-              {% if link.title == 'CV' %}
-                <span class="side-nav__short" aria-hidden="true">CV</span>
-              {% elsif link.title == 'Publications' %}
-                <span class="side-nav__short" aria-hidden="true">Pub</span>
-              {% elsif link.title == 'Projects' %}
-                <span class="side-nav__short" aria-hidden="true">Prj</span>
-              {% elsif link.title == 'Talks' %}
-                <span class="side-nav__short" aria-hidden="true">Tlk</span>
-              {% else %}
-                <span class="side-nav__short" aria-hidden="true">{{ link.title | slice: 0, 3 }}</span>
-              {% endif %}
             </a>
           </li>
         {% endfor %}

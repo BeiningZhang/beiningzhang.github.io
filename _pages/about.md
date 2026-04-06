@@ -12,12 +12,6 @@ header:
   overlay_color: "#111827"
   hero_avatar: "profile.png"
   ctas:
-    - label: "CV"
-      url: "/cv/"
-      class: "btn--primary"
-    - label: "Publications"
-      url: "/publications/"
-      class: "btn--light-outline"
     - label: "Email"
       url: "mailto:beiningzhang001@gmail.com"
       class: "btn--light-outline"

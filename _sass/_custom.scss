@@ -204,11 +204,46 @@ body.nav-collapsed .side-nav__links {
 
 /* On small screens, default to collapsed width */
 @media (max-width: 925px) {
+  /* Mobile: treat sidebar as an off-canvas drawer */
   body {
-    padding-left: calc(var(--side-nav-collapsed-width) + var(--side-nav-gutter));
+    padding-left: 0;
   }
+
   .masthead.masthead--sidebar {
-    width: var(--side-nav-collapsed-width);
+    width: min(320px, 86vw);
+    transform: translateX(-100%);
+    transition: transform 0.18s ease-in-out;
+    z-index: 50;
+    background: var(--global-bg-color);
+  }
+
+  body:not(.nav-collapsed) .masthead.masthead--sidebar {
+    transform: translateX(0);
+  }
+
+  body:not(.nav-collapsed)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 40;
+  }
+
+  .side-nav__toggle {
+    position: fixed;
+    top: var(--content-pad);
+    left: var(--content-pad);
+    z-index: 60;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Hide links when collapsed; show when drawer open */
+  body.nav-collapsed .side-nav__links {
+    display: none;
+  }
+
+  body:not(.nav-collapsed) .side-nav__links {
+    display: flex;
   }
 }
 

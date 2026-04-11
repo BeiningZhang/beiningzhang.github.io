@@ -10,20 +10,55 @@ function setNavCollapsed(collapsed) {
 
 function initSideNav() {
   const toggle = document.getElementById("nav-toggle");
-  if (!toggle) return;
+  const nav = document.getElementById("site-nav");
+  if (!toggle || !nav) return;
 
-  setNavCollapsed(localStorage.getItem(NAV_COLLAPSED_KEY) === "1");
+  const isMobile = () => window.matchMedia && window.matchMedia("(max-width: 925px)").matches;
+
+  // On mobile, always start collapsed (off-canvas drawer). Don't overwrite desktop preference.
+  if (isMobile()) {
+    setNavCollapsed(true);
+  } else {
+    setNavCollapsed(localStorage.getItem(NAV_COLLAPSED_KEY) === "1");
+  }
 
   toggle.addEventListener("click", () => {
     const next = !document.body.classList.contains("nav-collapsed");
-    localStorage.setItem(NAV_COLLAPSED_KEY, next ? "1" : "0");
+    if (!isMobile()) {
+      localStorage.setItem(NAV_COLLAPSED_KEY, next ? "1" : "0");
+    }
     setNavCollapsed(next);
+  });
+
+  // Close drawer when clicking outside (mobile UX).
+  document.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+    if (document.body.classList.contains("nav-collapsed")) return;
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    if (nav.contains(target) || toggle.contains(target)) return;
+    setNavCollapsed(true);
   });
 
   // Always expand after navigating via sidebar links (including Cmd/Ctrl+click).
   document.querySelectorAll(".side-nav__link").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem(NAV_COLLAPSED_KEY, "0");
+    link.addEventListener("click", (e) => {
+      // If the user is opening in a new tab/window (Cmd/Ctrl click, middle click, etc.),
+      // keep the existing collapsed preference to avoid "zoomed" layout differences.
+      if (
+        e.metaKey ||
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.altKey ||
+        e.button === 1 ||
+        link.target === "_blank"
+      ) {
+        return;
+      }
+
+      if (!isMobile()) {
+        localStorage.setItem(NAV_COLLAPSED_KEY, "0");
+      }
       setNavCollapsed(false);
     });
   });

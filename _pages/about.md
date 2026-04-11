@@ -18,7 +18,7 @@ header:
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/beiningzhang"
       class: "btn--light-outline"
-excerpt: "AI/ML Engineer + Researcher building grounded LLM systems."
+excerpt: "AI/ML Engineer & Researcher building trustworthy LLM systems."
 
 feature_row:
   - title: "Grounded RAG systems in high-stakes domains"

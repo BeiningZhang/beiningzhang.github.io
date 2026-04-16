@@ -10,6 +10,7 @@ header:
   overlay_filter: "rgba(17, 24, 39, 0.55)"
   overlay_color: "#111827"
 excerpt: "AI/ML Engineer + Researcher focused on grounded LLM systems in high-stakes domains."
+summary: "Experience and impact, presented as scannable cards — what I built, why it mattered, and how it performed."
 ---
 
 {% include base_path %}

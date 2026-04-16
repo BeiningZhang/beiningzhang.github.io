@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: ""
+title: "Home"
 author_profile: true
 redirect_from: 
   - /about/
@@ -18,7 +18,27 @@ header:
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/beiningzhang"
       class: "btn--light-outline"
-excerpt: "AI/ML Engineer & Researcher building trustworthy LLM systems."
+excerpt: "Quick links to CV, publications, and selected projects."
+section_title: "Overview"
+section_desc: "AI/ML engineer & researcher building trustworthy LLM systems (evaluation, grounded generation, and participatory design)."
+summary: "I build reliable LLM systems: claim-first retrieval, measurable evaluation, and human-centered agent design."
+mindset_label: "Focus"
+mindset_cards:
+  - icon: "◎"
+    icon_bg: "var(--purple-bg)"
+    icon_text: "var(--purple-text)"
+    title: "Trustworthy agents"
+    body: "Evaluation in mixed-motive settings, safety constraints, and failure analysis to keep agents reliable."
+  - icon: "▦"
+    icon_bg: "var(--teal-bg)"
+    icon_text: "var(--teal-text)"
+    title: "Grounded RAG"
+    body: "Claim-first retrieval with citations and calibrated uncertainty for high-stakes domains."
+  - icon: "◇"
+    icon_bg: "var(--amber-bg)"
+    icon_text: "var(--amber-text)"
+    title: "Participatory AI"
+    body: "Citizen-centric design practices that align AI systems with the people affected by them."
 
 feature_row:
   - title: "Grounded RAG systems in high-stakes domains"

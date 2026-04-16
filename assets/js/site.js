@@ -1,65 +1,70 @@
 // Site behaviors (theme toggle, sticky footer, follow menu, smooth scroll offset).
 
-const NAV_COLLAPSED_KEY = "nav_collapsed";
-
-function setNavCollapsed(collapsed) {
-  document.body.classList.toggle("nav-collapsed", collapsed);
-  const toggle = document.getElementById("nav-toggle");
-  if (toggle) toggle.setAttribute("aria-expanded", (!collapsed).toString());
-}
-
 function initSideNav() {
-  const toggle = document.getElementById("nav-toggle");
+  const openButton = document.getElementById("nav-open");
+  const closeButton = document.getElementById("nav-close");
   const nav = document.getElementById("site-nav");
-  if (!toggle || !nav) return;
+  if (!nav) return;
 
-  const isMobile = () => window.matchMedia && window.matchMedia("(max-width: 925px)").matches;
+  const setCollapsed = (collapsed) => {
+    document.body.classList.toggle("nav-collapsed", collapsed);
+    if (openButton) openButton.setAttribute("aria-expanded", (!collapsed).toString());
+  };
 
-  // On mobile, always start collapsed (off-canvas drawer). Don't overwrite desktop preference.
-  if (isMobile()) {
-    setNavCollapsed(true);
-  } else {
-    setNavCollapsed(localStorage.getItem(NAV_COLLAPSED_KEY) === "1");
+  const isMobile = window.matchMedia ? window.matchMedia("(max-width: 925px)") : null;
+
+  const syncForViewport = () => {
+    // Desktop: keep sidebar visible (ignore persisted collapsed state).
+    if (!isMobile || !isMobile.matches) {
+      setCollapsed(false);
+      return;
+    }
+
+    // Mobile: default to collapsed unless already opened.
+    if (!document.body.classList.contains("nav-collapsed")) return;
+    setCollapsed(true);
+  };
+
+  syncForViewport();
+  if (isMobile) isMobile.addEventListener("change", syncForViewport);
+
+  if (openButton) {
+    openButton.addEventListener("click", () => {
+      if (!isMobile || !isMobile.matches) return;
+      setCollapsed(false);
+    });
   }
 
-  toggle.addEventListener("click", () => {
-    const next = !document.body.classList.contains("nav-collapsed");
-    if (!isMobile()) {
-      localStorage.setItem(NAV_COLLAPSED_KEY, next ? "1" : "0");
-    }
-    setNavCollapsed(next);
-  });
+  if (closeButton) {
+    closeButton.addEventListener("click", () => {
+      if (!isMobile || !isMobile.matches) return;
+      setCollapsed(true);
+    });
+  }
 
-  // Close drawer when clicking outside (mobile UX).
+  // Close when clicking outside.
   document.addEventListener("click", (e) => {
-    if (!isMobile()) return;
+    if (!isMobile || !isMobile.matches) return;
     if (document.body.classList.contains("nav-collapsed")) return;
     const target = e.target;
     if (!(target instanceof Element)) return;
-    if (nav.contains(target) || toggle.contains(target)) return;
-    setNavCollapsed(true);
+    if (nav.contains(target)) return;
+    if (openButton && openButton.contains(target)) return;
+    setCollapsed(true);
   });
 
-  // Always expand after navigating via sidebar links (including Cmd/Ctrl+click).
-  document.querySelectorAll(".side-nav__link").forEach((link) => {
-    link.addEventListener("click", (e) => {
-      // If the user is opening in a new tab/window (Cmd/Ctrl click, middle click, etc.),
-      // keep the existing collapsed preference to avoid "zoomed" layout differences.
-      if (
-        e.metaKey ||
-        e.ctrlKey ||
-        e.shiftKey ||
-        e.altKey ||
-        e.button === 1 ||
-        link.target === "_blank"
-      ) {
-        return;
-      }
+  // Close on Escape.
+  document.addEventListener("keydown", (e) => {
+    if (!isMobile || !isMobile.matches) return;
+    if (e.key !== "Escape") return;
+    setCollapsed(true);
+  });
 
-      if (!isMobile()) {
-        localStorage.setItem(NAV_COLLAPSED_KEY, "0");
-      }
-      setNavCollapsed(false);
+  // Navigate and close drawer.
+  document.querySelectorAll(".side-nav__link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!isMobile || !isMobile.matches) return;
+      setCollapsed(true);
     });
   });
 }

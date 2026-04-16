@@ -12,27 +12,132 @@ layout: compress
   </head>
 
   <body>
-    <script>
-      try {
-        if (localStorage.getItem("nav_collapsed") === "1") {
-          document.body.classList.add("nav-collapsed");
-        }
-      } catch (e) {}
-    </script>
-
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
 
-    {{ content }}
+    {% comment %}
+      Top header (exact layout style from linkedin_profile_strategy_guide.html)
+    {% endcomment %}
+    <div class="layout">
+      <div class="page-header">
+        <div class="page-eyebrow">{{ site.author.name | default: "Profile" }}</div>
+        <h1 class="page-title">{{ site.title }}</h1>
+        <p class="page-desc">{{ site.author.bio | default: site.description }}</p>
+      </div>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+      {% comment %}
+        Tabs (Home + navigation.yml)
+      {% endcomment %}
+      <div class="nav" aria-label="Primary tabs">
+        <a class="nav-btn{% if page.url == '/' %} active{% endif %}" href="{{ base_path }}/">Home</a>
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% continue %}
+          {% endif %}
+
+          {% assign is_active = false %}
+          {% if page.url == link.url %}
+            {% assign is_active = true %}
+          {% endif %}
+
+          <a class="nav-btn{% if is_active %} active{% endif %}" href="{{ base_path }}{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+
+      {% comment %}
+        Section header (per page)
+      {% endcomment %}
+      {% capture tab_urls %}/{% for link in site.data.navigation.main %}{% unless link.url contains 'http' %}|{{ link.url }}{% endunless %}{% endfor %}{% endcapture %}
+      {% assign tab_urls = tab_urls | split: "|" %}
+      {% assign tab_total = tab_urls | size %}
+      {% assign tab_index0 = 0 %}
+      {% assign tab_found = false %}
+      {% for u in tab_urls %}
+        {% if u == page.url %}
+          {% assign tab_index0 = forloop.index0 %}
+          {% assign tab_found = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% assign tab_index1 = tab_index0 | plus: 1 %}
+
+      {% assign section_title = page.section_title | default: page.title %}
+      {% assign section_desc = page.section_desc | default: page.excerpt %}
+      {% assign section_summary = page.summary | default: "" %}
+
+      <div class="section active">
+        {% if tab_found %}
+          <div class="section-meta">Section {{ tab_index1 }} of {{ tab_total }}</div>
+        {% endif %}
+        {% if section_title and section_title != "" %}
+          <h2 class="section-title">{{ section_title }}</h2>
+        {% endif %}
+        {% if section_desc and section_desc != "" %}
+          <p class="section-desc">{{ section_desc }}</p>
+        {% endif %}
+
+        {% if section_summary and section_summary != "" %}
+          <div class="thesis">{{ section_summary }}</div>
+        {% endif %}
+
+        <div class="content">
+          {{ content }}
+        </div>
+
+        {% if page.mindset_cards %}
+          <div class="divider"></div>
+          <div class="mindset-label">{{ page.mindset_label | default: "Mindset" }}</div>
+          <div class="mindset-cards">
+            {% for c in page.mindset_cards %}
+              {% assign icon_bg = c.icon_bg | default: "var(--purple-bg)" %}
+              {% assign icon_text = c.icon_text | default: "var(--purple-text)" %}
+              <div class="mindset-card">
+                <div class="mindset-icon" style="background: {{ icon_bg }}; color: {{ icon_text }};">{{ c.icon | default: "◦" }}</div>
+                <div class="mindset-title">{{ c.title }}</div>
+                <div class="mindset-body">{{ c.body }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if tab_found %}
+          {% comment %}
+            Prev/next + dots
+          {% endcomment %}
+          {% assign prev_index0 = tab_index0 | minus: 1 %}
+          {% assign next_index0 = tab_index0 | plus: 1 %}
+          {% assign prev_url = "" %}
+          {% assign next_url = "" %}
+          {% if prev_index0 >= 0 %}
+            {% assign prev_url = tab_urls[prev_index0] %}
+          {% endif %}
+          {% if next_index0 < tab_total %}
+            {% assign next_url = tab_urls[next_index0] %}
+          {% endif %}
+
+          <div class="nav-row" aria-label="Section navigation">
+            {% if prev_url != "" %}
+              <a class="arrow-btn" href="{{ base_path }}{{ prev_url }}">← prev</a>
+            {% else %}
+              <span class="arrow-btn disabled" aria-disabled="true">← prev</span>
+            {% endif %}
+
+            <div class="progress-dots" aria-label="Progress">
+              {% for u in tab_urls %}
+                <a class="dot{% if forloop.index0 == tab_index0 %} active{% endif %}" href="{{ base_path }}{{ u }}" aria-label="Go to section {{ forloop.index }}"></a>
+              {% endfor %}
+            </div>
+
+            {% if next_url != "" %}
+              <a class="arrow-btn" href="{{ base_path }}{{ next_url }}">next →</a>
+            {% else %}
+              <span class="arrow-btn disabled" aria-disabled="true">next →</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>

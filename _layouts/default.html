@@ -20,38 +20,31 @@ layout: compress
     <div class="layout">
       <div class="page-header">
         <div class="page-eyebrow">{{ site.author.name | default: "Profile" }}</div>
-        <div class="page-title-row">
-          <div class="page-title-line">
+        <div class="page-header-row">
+          <div class="page-header-main">
             <h1 class="page-title">{{ site.title }}</h1>
-            <div class="page-actions">
-              {% assign follow_url = "" %}
-              {% if site.author.linkedin %}
-                {% assign follow_url = "https://www.linkedin.com/in/" | append: site.author.linkedin %}
-              {% endif %}
-              {% if follow_url != "" %}
-                <a class="follow-btn" href="{{ follow_url }}" target="_blank" rel="noopener noreferrer">+ Follow</a>
-              {% endif %}
-            </div>
+            <p class="page-desc">{{ site.author.bio | default: site.description }}</p>
           </div>
 
           {% if site.author.avatar %}
-            <img class="page-avatar" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" />
-          {% endif %}
-        </div>
+            <div class="page-avatar-col">
+              <img class="page-avatar" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" />
 
-        <p class="page-desc">{{ site.author.bio | default: site.description }}</p>
-
-        <div class="contact-links" aria-label="Contact links">
-          {% if site.author.email %}
-            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-          {% endif %}
-          {% if site.author.linkedin %}
-            <span class="dot-sep">·</span>
-            <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          {% endif %}
-          {% if site.author.googlescholar %}
-            <span class="dot-sep">·</span>
-            <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+              <details class="follow-details">
+                <summary class="follow-btn">+ Follow</summary>
+                <div class="follow-menu" role="menu" aria-label="Contact">
+                  {% if site.author.linkedin %}
+                    <a class="follow-item" role="menuitem" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  {% endif %}
+                  {% if site.author.googlescholar %}
+                    <a class="follow-item" role="menuitem" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                  {% endif %}
+                  {% if site.author.email %}
+                    <a class="follow-item" role="menuitem" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+                  {% endif %}
+                </div>
+              </details>
+            </div>
           {% endif %}
         </div>
       </div>
@@ -60,7 +53,6 @@ layout: compress
         Tabs (Home + navigation.yml)
       {% endcomment %}
       <div class="nav" aria-label="Primary tabs">
-        <a class="nav-btn{% if page.url == '/' %} active{% endif %}" href="{{ base_path }}/">Overview</a>
         {% for link in site.data.navigation.main %}
           {% if link.url contains 'http' %}
             {% continue %}
@@ -78,8 +70,8 @@ layout: compress
       {% comment %}
         Section header (per page)
       {% endcomment %}
-      {% capture tab_urls %}/{% for link in site.data.navigation.main %}{% unless link.url contains 'http' %}|{{ link.url }}{% endunless %}{% endfor %}{% endcapture %}
-      {% assign tab_urls = tab_urls | split: "|" %}
+      {% capture tab_urls %}{% for link in site.data.navigation.main %}{% unless link.url contains 'http' %}{{ link.url }}|{% endunless %}{% endfor %}{% endcapture %}
+      {% assign tab_urls = tab_urls | split: "|" | compact %}
       {% assign tab_total = tab_urls | size %}
       {% assign tab_index0 = 0 %}
       {% assign tab_found = false %}

@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Home"
+title: "Overview"
 author_profile: true
 redirect_from: 
   - /about/
@@ -18,57 +18,95 @@ header:
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/beiningzhang"
       class: "btn--light-outline"
-excerpt: "Quick links to CV, publications, and selected projects."
-section_title: "Overview"
+excerpt: "Trustworthy LLM systems for finance and health — grounded, evaluated, and designed for real workflows."
+section_title: "Trustworthy AI for finance & health"
 section_desc: "AI/ML engineer & researcher building trustworthy LLM systems (evaluation, grounded generation, and participatory design)."
-summary: "I build reliable LLM systems: claim-first retrieval, measurable evaluation, and human-centered agent design."
+summary: "I build trustworthy LLM systems for high-stakes finance and health: grounded generation, measurable evaluation, and participatory design."
 mindset_label: "Focus"
 mindset_cards:
   - icon: "◎"
     icon_bg: "var(--purple-bg)"
     icon_text: "var(--purple-text)"
-    title: "Trustworthy agents"
-    body: "Evaluation in mixed-motive settings, safety constraints, and failure analysis to keep agents reliable."
-  - icon: "▦"
+    title: "Evaluation"
+    body: "Define failure modes, set targets, and measure reliability in deployment — not just in demos."
+  - icon: "⊞"
     icon_bg: "var(--teal-bg)"
     icon_text: "var(--teal-text)"
-    title: "Grounded RAG"
-    body: "Claim-first retrieval with citations and calibrated uncertainty for high-stakes domains."
-  - icon: "◇"
+    title: "Grounded generation"
+    body: "Claim-first retrieval with citations and uncertainty handling for high-stakes decisions."
+  - icon: "◈"
     icon_bg: "var(--amber-bg)"
     icon_text: "var(--amber-text)"
     title: "Participatory AI"
-    body: "Citizen-centric design practices that align AI systems with the people affected by them."
+    body: "Design with the people affected — map workflows, decisions, and accountability."
 
 feature_row:
-  - title: "Grounded RAG systems in high-stakes domains"
-    excerpt: "Production LLM pipelines with claim-first retrieval, inline citations, and measurable quality improvements."
-    url: "/cv/"
-    btn_label: "See experience"
+  - title: "Industry experience (Finance)"
+    excerpt: "Investment intelligence and market monitoring — grounded generation, evaluation, and reliability loops."
+    url: "/industry-experience/"
+    btn_label: "See industry"
     btn_class: "btn--primary"
-  - title: "LLM evaluation & monitoring"
-    excerpt: "Evaluation frameworks, router audits, and feedback loops to keep agentic systems reliable over time."
-    url: "/publications/"
-    btn_label: "See publications"
+  - title: "Research experience (Health + Evaluation)"
+    excerpt: "Medical research classification at scale, agent evaluation, governance, and participatory design."
+    url: "/research-experience/"
+    btn_label: "See research"
     btn_class: "btn--primary"
-  - title: "Medical research classification at scale"
-    excerpt: "High-agreement classification at 200k-record scale with precision-first abstention to focus experts on ambiguity."
-    url: "/cv/"
-    btn_label: "See details"
+  - title: "Writing (Takeaways)"
+    excerpt: "Short essays on what makes AI useful in real organisations — problem-first, workflow-first."
+    url: "/takeaways/"
+    btn_label: "Read takeaways"
     btn_class: "btn--primary"
 ---
 
 <div class="metrics-strip" aria-label="Key highlights">
-  <span class="metric-chip">200k records</span>
-  <span class="metric-chip">93% agreement</span>
-  <span class="metric-chip">80% faster detection</span>
+  <span class="metric-chip">Finance: 80% faster incident detection</span>
+  <span class="metric-chip">Health: 200k records</span>
+  <span class="metric-chip">Health: 93% agreement</span>
 </div>
 
-## Selected Projects / Case Studies
+## What I focus on
+
+I build <strong>trustworthy AI systems</strong> where mistakes are expensive: <strong>finance</strong> and <strong>health</strong>. The goal is not "AI adoption" — it is <strong>reliable decision support</strong> embedded in real workflows.
+
+<div class="principles">
+  <article class="principle">
+    <div class="principle-num">Focus 01</div>
+    <div class="principle-title">Finance (investment + market operations)</div>
+    <p class="principle-body">LLM systems that stay grounded under uncertainty, and monitoring that surfaces failures early.</p>
+    <div class="example-block">
+      <div class="example-label">What I build</div>
+      <div class="example-good">
+        <ul>
+          <li>Grounded RAG for research and memo workflows (claim-first retrieval + citations).</li>
+          <li>Evaluation and monitoring loops: router audits, context capture, and feedback-driven iteration.</li>
+          <li>Workflow-first delivery: clear interfaces, rollback plans, and reliability targets.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="principle">
+    <div class="principle-num">Focus 02</div>
+    <div class="principle-title">Health (research classification + evidence workflows)</div>
+    <p class="principle-body">High-agreement AI that respects expert time — precision-first systems that know when not to decide.</p>
+    <div class="example-block">
+      <div class="example-label">What I build</div>
+      <div class="example-good">
+        <ul>
+          <li>LLM-assisted classification and triage at scale, with abstention to route ambiguity to experts.</li>
+          <li>Grounding and traceability: evidence-linked outputs, uncertainty handling, and failure analysis.</li>
+          <li>Human-centered design: align system outputs with accountability and clinical/research decision points.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>
+
+## Selected projects / case studies
 
 {% include feature_row %}
 
-## Research Focus
+## Research interests
 
 - LLM agent evaluation in mixed-motive and cooperative settings
 - Governance, explainability, and participatory design for agentic systems
@@ -77,4 +115,4 @@ feature_row:
 
 ## Contact
 
-Open to: research collaborations on trustworthy AI, and speaking on LLM systems in high-stakes domains.
+Open to: research collaborations on trustworthy AI, and speaking on LLM systems in high-stakes finance and health.

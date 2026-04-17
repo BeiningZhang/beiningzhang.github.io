@@ -20,15 +20,47 @@ layout: compress
     <div class="layout">
       <div class="page-header">
         <div class="page-eyebrow">{{ site.author.name | default: "Profile" }}</div>
-        <h1 class="page-title">{{ site.title }}</h1>
+        <div class="page-title-row">
+          <div class="page-title-line">
+            <h1 class="page-title">{{ site.title }}</h1>
+            <div class="page-actions">
+              {% assign follow_url = "" %}
+              {% if site.author.linkedin %}
+                {% assign follow_url = "https://www.linkedin.com/in/" | append: site.author.linkedin %}
+              {% endif %}
+              {% if follow_url != "" %}
+                <a class="follow-btn" href="{{ follow_url }}" target="_blank" rel="noopener noreferrer">+ Follow</a>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if site.author.avatar %}
+            <img class="page-avatar" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" />
+          {% endif %}
+        </div>
+
         <p class="page-desc">{{ site.author.bio | default: site.description }}</p>
+
+        <div class="contact-links" aria-label="Contact links">
+          {% if site.author.email %}
+            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+          {% endif %}
+          {% if site.author.linkedin %}
+            <span class="dot-sep">·</span>
+            <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          {% endif %}
+          {% if site.author.googlescholar %}
+            <span class="dot-sep">·</span>
+            <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          {% endif %}
+        </div>
       </div>
 
       {% comment %}
         Tabs (Home + navigation.yml)
       {% endcomment %}
       <div class="nav" aria-label="Primary tabs">
-        <a class="nav-btn{% if page.url == '/' %} active{% endif %}" href="{{ base_path }}/">Home</a>
+        <a class="nav-btn{% if page.url == '/' %} active{% endif %}" href="{{ base_path }}/">Overview</a>
         {% for link in site.data.navigation.main %}
           {% if link.url contains 'http' %}
             {% continue %}

@@ -24,7 +24,7 @@ repository               : "BeiningZhang/beiningzhang.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "AI Researcher" # Your Sidebar Name
+  name             : "AI Engineer & Researcher" # Eyebrow title
   pronouns         : "she/her" # example: "she/her"  
   bio              : "AI researcher striving to design desirable, pro-social AI agents and systems that empower human-beings." # Short biography for the left-hand sidebar
   location         : "Southampton, UK"

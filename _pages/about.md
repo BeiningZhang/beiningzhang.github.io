@@ -78,4 +78,3 @@ feature_row:
 ## Contact
 
 Open to: research collaborations on trustworthy AI, and speaking on LLM systems in high-stakes domains.
-Best way to reach me: <a href="mailto:beiningzhang001@gmail.com">beiningzhang001@gmail.com</a> · <a href="https://www.linkedin.com/in/beiningzhang">LinkedIn</a>

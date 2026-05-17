@@ -26,9 +26,9 @@ author:
   avatar           : "profile.png"
   name             : "AI Engineer & Researcher" # Eyebrow title
   pronouns         : "she/her" # example: "she/her"  
-  bio              : "AI/ML Engineer & Researcher building trustworthy LLM systems for Finance and Health." # Short biography for the left-hand sidebar
-  location         : "Southampton, UK"
-  employer         : "University of Southampton"
+  bio              : "AI/ML Engineer & Researcher building trustworthy AI systems for Finance and Health." # Short biography for the left-hand sidebar
+  location         : "London, UK"
+  employer         : ""
   uri              : # URL
   email            : "beiningzhang001@gmail.com" 
 

@@ -4,7 +4,6 @@ title: "Industry experience"
 permalink: /industry-experience/
 author_profile: false
 excerpt: "Building trustworthy AI systems for finance workflows — grounded generation, evaluation, and monitoring."
-summary: "Selected roles — focused on high-stakes finance contexts and measurable reliability."
 mindset_label: "Core themes"
 mindset_cards:
   - icon: "◎"
@@ -76,4 +75,3 @@ mindset_cards:
     </div>
   </article>
 </div>
-

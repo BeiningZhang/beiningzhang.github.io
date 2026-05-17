@@ -84,6 +84,18 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 10px;
 }
 
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.page-title-row .page-title {
+  margin-bottom: 0;
+}
+
 .follow-btn {
   display: inline-flex;
   align-items: center;
@@ -145,7 +157,6 @@ a { color: inherit; text-decoration: none; }
 .follow-details {
   position: relative;
   display: inline-block;
-  margin-top: 18px;
   z-index: 4;
 }
 
@@ -163,7 +174,7 @@ a { color: inherit; text-decoration: none; }
 
 .follow-menu {
   position: absolute;
-  bottom: calc(100% + 8px);
+  top: calc(100% + 8px);
   left: 0;
   min-width: 210px;
   background: var(--bg-primary);
@@ -312,18 +323,14 @@ a { color: inherit; text-decoration: none; }
 
 /* Callout block (avoid/instead style) */
 .example-block {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   margin-top: 12px;
 }
 
 .example-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-tertiary);
-  letter-spacing: .06em;
-  margin-bottom: 5px;
+  display: none;
 }
 
 .example-bad {
@@ -335,8 +342,8 @@ a { color: inherit; text-decoration: none; }
 
 .example-good {
   font-size: 13px;
-  color: var(--success);
-  line-height: 1.5;
+  color: var(--text-secondary);
+  line-height: 1.65;
 }
 
 .example-block ul {
@@ -366,11 +373,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .principle-num {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-tertiary);
-  letter-spacing: .06em;
-  margin-bottom: 4px;
+  display: none;
 }
 
 .principle-title,

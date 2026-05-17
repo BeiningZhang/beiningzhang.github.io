@@ -4,7 +4,6 @@ title: "Research experience"
 permalink: /research-experience/
 author_profile: false
 excerpt: "Trustworthy AI research across LLM evaluation, participatory design, and health applications."
-summary: "Selected research roles — focused on reliability, evaluation, and high-stakes use."
 mindset_label: "Core themes"
 mindset_cards:
   - icon: "◎"
@@ -73,4 +72,3 @@ mindset_cards:
     </div>
   </article>
 </div>
-

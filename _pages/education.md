@@ -3,8 +3,6 @@ layout: archive
 title: "Education"
 permalink: /education/
 author_profile: false
-excerpt: "Degrees and programs."
-summary: "Education and training — the formal background behind my work."
 ---
 
 {% include base_path %}

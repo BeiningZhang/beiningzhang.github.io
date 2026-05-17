@@ -18,10 +18,6 @@ header:
     - label: "LinkedIn"
       url: "https://www.linkedin.com/in/beiningzhang"
       class: "btn--light-outline"
-excerpt: "Trustworthy LLM systems for finance and health — grounded, evaluated, and designed for real workflows."
-section_title: "Trustworthy AI for finance & health"
-section_desc: "AI/ML engineer & researcher building trustworthy LLM systems (evaluation, grounded generation, and participatory design)."
-summary: "I build trustworthy LLM systems for high-stakes finance and health: grounded generation, measurable evaluation, and participatory design."
 mindset_label: "Focus"
 mindset_cards:
   - icon: "◎"
@@ -40,31 +36,7 @@ mindset_cards:
     title: "Participatory AI"
     body: "Design with the people affected — map workflows, decisions, and accountability."
 
-feature_row:
-  - title: "Industry experience (Finance)"
-    excerpt: "Investment intelligence and market monitoring — grounded generation, evaluation, and reliability loops."
-    url: "/industry-experience/"
-    btn_label: "See industry"
-    btn_class: "btn--primary"
-  - title: "Research experience (Health + Evaluation)"
-    excerpt: "Medical research classification at scale, agent evaluation, governance, and participatory design."
-    url: "/research-experience/"
-    btn_label: "See research"
-    btn_class: "btn--primary"
-  - title: "Writing (Takeaways)"
-    excerpt: "Short essays on what makes AI useful in real organisations — problem-first, workflow-first."
-    url: "/takeaways/"
-    btn_label: "Read takeaways"
-    btn_class: "btn--primary"
 ---
-
-<div class="metrics-strip" aria-label="Key highlights">
-  <span class="metric-chip">Finance: 80% faster incident detection</span>
-  <span class="metric-chip">Health: 200k records</span>
-  <span class="metric-chip">Health: 93% agreement</span>
-</div>
-
-## What I focus on
 
 I build <strong>trustworthy AI systems</strong> where mistakes are expensive: <strong>finance</strong> and <strong>health</strong>. The goal is not "AI adoption" — it is <strong>reliable decision support</strong> embedded in real workflows.
 
@@ -101,10 +73,6 @@ I build <strong>trustworthy AI systems</strong> where mistakes are expensive: <s
     </div>
   </article>
 </div>
-
-## Selected projects / case studies
-
-{% include feature_row %}
 
 ## Research interests
 

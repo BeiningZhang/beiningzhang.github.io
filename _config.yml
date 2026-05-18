@@ -23,7 +23,7 @@ repository               : "BeiningZhang/beiningzhang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "AI Engineer & Researcher" # Eyebrow title
   pronouns         : "she/her" # example: "she/her"  
   bio              : "AI/ML Engineer & Researcher building trustworthy AI systems for Finance and Health." # Short biography for the left-hand sidebar

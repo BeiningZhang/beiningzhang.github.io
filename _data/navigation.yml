@@ -17,11 +17,17 @@ main:
   - title: "Research experience"
     url: /research-experience/
 
-  - title: "Education"
-    url: /education/
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Projects"
+    url: /portfolio/
 
   - title: "Skills"
     url: /skills/
+
+  - title: "Education"
+    url: /education/
 
   - title: "Beining's takeaway"
     url: /takeaways/
@@ -35,9 +41,6 @@ main:
   # - title: "Teaching"
   #   url: /teaching/    
     
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
   # - title: "Blog Posts"
   #   url: /year-archive/
     

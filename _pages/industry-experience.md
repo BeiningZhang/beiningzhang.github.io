@@ -38,6 +38,7 @@ mindset_cards:
           <li>Designed a claim-first retrieval architecture to reduce context contamination, integrating AWS Bedrock via a multi-provider AI client (Azure OpenAI + Bedrock) for more consistent answers.</li>
           <li>Migrated a legacy chat entrypoint into a SmartRouter → ChatPipeline architecture with a test and rollout plan, simplifying production operations.</li>
           <li>Built an evaluation + monitoring loop capturing router decisions, retrieved context, and user feedback to support proactive quality control.</li>
+          <li>Designed and migrated a transaction-monitoring foundation from legacy storage to auditable RDS + S3 evidence, establishing resilient source-level outcomes and a path to scheduled asynchronous processing.</li>
         </ul>
       </div>
     </div>

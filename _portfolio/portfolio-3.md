@@ -8,3 +8,4 @@ collection: portfolio
 - Operational dashboards and alerting to support Capital Markets stakeholders
 - Prototyped predictive delay-detection to move from reactive to proactive monitoring
 
+**Skills showcased:** AWS, S3, Glue, SageMaker, Snowflake, Elasticsearch, ServiceNow, SQL, data pipelines, monitoring, predictive modelling, Power BI, Kibana.

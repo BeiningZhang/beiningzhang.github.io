@@ -31,7 +31,10 @@ author_profile: false
       <span class="pub-chip">Classification</span><span class="pub-chip">Few-shot Learning</span><span class="pub-chip">Ensembling</span><span class="pub-chip">Abstention Design</span><span class="pub-chip">LSTM</span><span class="pub-chip">K-means</span><span class="pub-chip">TF-IDF</span><span class="pub-chip">Data Pipelines</span>
     </p>
     <p>
-      <span class="pub-chip">PowerBI</span><span class="pub-chip">Kibana</span><span class="pub-chip">ServiceNow</span>
+      <span class="pub-chip">PowerBI</span><span class="pub-chip">Kibana</span><span class="pub-chip">ServiceNow</span><span class="pub-chip">PostgreSQL/RDS</span><span class="pub-chip">DynamoDB</span><span class="pub-chip">EventBridge</span><span class="pub-chip">Lambda</span><span class="pub-chip">ECS Fargate</span><span class="pub-chip">Apify</span>
+    </p>
+    <p>
+      <span class="pub-chip">Web Crawling</span><span class="pub-chip">Database Migration</span><span class="pub-chip">Data Lineage</span><span class="pub-chip">Evidence Provenance</span><span class="pub-chip">Async Jobs</span><span class="pub-chip">Job Orchestration</span>
     </p>
   </article>
 

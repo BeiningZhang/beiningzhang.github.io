@@ -18,8 +18,9 @@
 <!-- For all browsers -->
 <script>
   try {
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.dataset.theme = "dark";
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      document.documentElement.dataset.theme = savedTheme;
     }
   } catch (error) {}
 </script>

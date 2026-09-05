@@ -16,13 +16,10 @@ layout: compress
       <aside class="site-rail" aria-label="Site identity and navigation">
         <div class="identity">
           <div class="identity__copy">
-            <p class="identity__name">{{ site.title }}</p>
+            <h1 class="identity__name">{{ site.title }}</h1>
             <p class="identity__role">{{ site.author.name }}</p>
             <p class="identity__bio">{{ site.author.bio | default: site.description }}</p>
           </div>
-          {% if site.author.avatar %}
-            <img class="profile-photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="Portrait of {{ site.title }}" />
-          {% endif %}
         </div>
 
         <nav class="section-nav" aria-label="Primary navigation">
@@ -41,7 +38,7 @@ layout: compress
         <div class="rail-footer">
           <div class="social-links" aria-label="Contact links">
             {% if site.author.email %}<a href="mailto:{{ site.author.email | strip }}">Email</a>{% endif %}
-            {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
+            {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
             {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
             {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>{% endif %}
           </div>

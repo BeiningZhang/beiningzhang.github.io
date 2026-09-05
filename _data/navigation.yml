@@ -10,30 +10,39 @@
 main:
   - title: "About"
     url: /
+    anchor: about
 
   - title: "Industry experience"
     url: /industry-experience/
+    anchor: industry-experience
 
   - title: "Research experience"
     url: /research-experience/
+    anchor: research-experience
 
   - title: "Publications"
     url: /publications/
+    anchor: publications
 
   - title: "Projects"
     url: /portfolio/
+    anchor: projects
 
   - title: "Skills"
     url: /skills/
+    anchor: skills
 
   - title: "Education"
     url: /education/
+    anchor: education
 
   - title: "Beining's takeaway"
     url: /takeaways/
+    anchor: takeaways
 
   - title: "Talks & Activities"
     url: /talks/
+    anchor: talks-activities
 
   # - title: "Talks"
   #   url: /talks/    

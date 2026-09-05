@@ -1,0 +1,7 @@
+<section class="site-section" id="talks-activities">
+  <p class="site-section__eyebrow">09</p>
+  <h2>Talks &amp; Activities</h2>
+  {% if site.talkmap_link == true %}<p><a href="{{ base_path }}/talkmap.html">See a map of all the places I've given a talk!</a></p>{% endif %}
+  {% for post in site.talks reversed %}{% include archive-single-talk.html %}{% endfor %}
+  <p><em>More content coming soon.</em></p>
+</section>

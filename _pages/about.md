@@ -5,7 +5,8 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
-layout: splash
+layout: default
+one_page: true
 header:
   overlay_image: "hero-gradient.svg"
   overlay_filter: "rgba(17, 24, 39, 0.55)"

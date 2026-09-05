@@ -1,0 +1,19 @@
+<section class="site-section" id="publications">
+  <p class="site-section__eyebrow">04</p>
+  <h2>Publications</h2>
+  <p class="section-lead">Peer-reviewed papers and workshop publications across LLM agents, evaluation, and applied AI.</p>
+  <p>Selected work first, then the full list — with quick visual cues for type and year.</p>
+  {% if site.author.googlescholar %}<p class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar</a>.</p>{% endif %}
+  {% if site.publication_category %}
+    {% for category in site.publication_category %}
+      {% assign title_shown = false %}
+      {% for post in site.publications reversed %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
+        {% unless title_shown %}<h3>{{ category[1].title }}</h3>{% assign title_shown = true %}{% endunless %}
+        {% include archive-single-publication-no-link.html %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% for post in site.publications reversed %}{% include archive-single-publication-no-link.html %}{% endfor %}
+  {% endif %}
+</section>

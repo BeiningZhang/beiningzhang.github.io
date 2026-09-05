@@ -1,245 +1,100 @@
 ---
 layout: compress
 ---
-
 {% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+<html lang="{{ site.locale | slice: 0, 2 }}" class="no-js" data-theme="light">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
-
   <body>
     {% include browser-upgrade.html %}
+    <a class="skip-link" href="#content">Skip to content</a>
 
-    {% comment %}
-      Top header (exact layout style from linkedin_profile_strategy_guide.html)
-    {% endcomment %}
-    <div class="layout">
-      <div class="page-header">
-        <div class="page-header-row">
-          <div class="page-header-main">
-            <div class="page-title-row">
-              <h1 class="page-title">{{ site.title }}</h1>
-              <details class="follow-details">
-                <summary class="follow-btn">+ Follow</summary>
-                <div class="follow-menu" role="menu" aria-label="Contact">
-                  {% if site.author.linkedin %}
-                    <a class="follow-item" role="menuitem" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">
-                      <span class="follow-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" focusable="false">
-                          <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.38A1.56 1.56 0 0 1 6.94 8.5ZM5.62 9.69H8.3V18.3H5.62ZM9.98 9.69H12.55V10.87H12.59C12.95 10.19 13.83 9.47 15.14 9.47C17.87 9.47 18.38 11.26 18.38 13.59V18.3H15.69V14.13C15.69 13.13 15.67 11.85 14.31 11.85C12.93 11.85 12.72 12.93 12.72 14.06V18.3H10.03Z" fill="currentColor"/>
-                        </svg>
-                      </span>
-                      <span>LinkedIn</span>
-                    </a>
-                  {% endif %}
-                  {% if site.author.googlescholar %}
-                    <a class="follow-item" role="menuitem" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">
-                      <span class="follow-icon" aria-hidden="true">
-                        <i class="ai ai-google-scholar"></i>
-                      </span>
-                      <span>Google Scholar</span>
-                    </a>
-                  {% endif %}
-                  {% if site.author.email %}
-                    {% assign author_email = site.author.email | strip %}
-                    <a
-                      class="follow-item follow-item--email"
-                      role="menuitem"
-                      href="mailto:{{ author_email }}"
-                      aria-label="Email {{ author_email }}"
-                      title="{{ author_email }}"
-                      data-email="{{ author_email }}">
-                      <span class="follow-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" focusable="false">
-                          <path d="M4 6.75C4 5.78 4.78 5 5.75 5H18.25C19.22 5 20 5.78 20 6.75V17.25C20 18.22 19.22 19 18.25 19H5.75C4.78 19 4 18.22 4 17.25ZM5.5 7.15V7.51L11.52 12.24C11.81 12.47 12.19 12.47 12.48 12.24L18.5 7.51V7.15C18.5 6.87 18.28 6.65 18 6.65H6C5.72 6.65 5.5 6.87 5.5 7.15ZM18.5 9.41L13.41 13.41C12.55 14.09 11.45 14.09 10.59 13.41L5.5 9.41V16.85C5.5 17.13 5.72 17.35 6 17.35H18C18.28 17.35 18.5 17.13 18.5 16.85Z" fill="currentColor"/>
-                        </svg>
-                      </span>
-                      <span>Email</span>
-                    </a>
-                  {% endif %}
-                </div>
-              </details>
-            </div>
-            <p class="page-desc">{{ site.author.bio | default: site.description }}</p>
-            <div class="follow-feedback" id="follow-feedback" aria-live="polite"></div>
+    <div class="site-frame">
+      <aside class="site-rail" aria-label="Site identity and navigation">
+        <div class="identity">
+          <div class="identity__copy">
+            <p class="identity__name">{{ site.title }}</p>
+            <p class="identity__role">{{ site.author.name }}</p>
+            <p class="identity__bio">{{ site.author.bio | default: site.description }}</p>
           </div>
-
           {% if site.author.avatar %}
-            <div class="page-avatar-col">
-              <img class="page-avatar" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" />
-            </div>
+            <img class="profile-photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="Portrait of {{ site.title }}" />
           {% endif %}
         </div>
-      </div>
 
-      {% comment %}
-        Tabs (Home + navigation.yml)
-      {% endcomment %}
-      <div class="nav" aria-label="Primary tabs">
-        {% for link in site.data.navigation.main %}
-          {% if link.url contains 'http' %}
-            {% continue %}
-          {% endif %}
-
-          {% assign is_active = false %}
-          {% if page.url == link.url %}
-            {% assign is_active = true %}
-          {% endif %}
-
-          <a class="nav-btn{% if is_active %} active{% endif %}" href="{{ base_path }}{{ link.url }}">{{ link.title }}</a>
-        {% endfor %}
-      </div>
-
-      {% comment %}
-        Section header (per page)
-      {% endcomment %}
-      {% capture tab_urls %}{% for link in site.data.navigation.main %}{% unless link.url contains 'http' %}{{ link.url }}|{% endunless %}{% endfor %}{% endcapture %}
-      {% assign tab_urls = tab_urls | split: "|" | compact %}
-      {% assign tab_total = tab_urls | size %}
-      {% assign tab_index0 = 0 %}
-      {% assign tab_found = false %}
-      {% for u in tab_urls %}
-        {% if u == page.url %}
-          {% assign tab_index0 = forloop.index0 %}
-          {% assign tab_found = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {% assign tab_index1 = tab_index0 | plus: 1 %}
-
-      {% assign section_title = page.section_title | default: page.title %}
-      {% if page.collection == "talks" %}
-        {% assign section_desc = page.section_desc | default: "" %}
-      {% else %}
-        {% assign section_desc = page.section_desc | default: page.excerpt %}
-      {% endif %}
-      {% assign section_summary = page.summary | default: "" %}
-
-      <div class="section active">
-        {% if tab_found %}
-          <div class="section-meta">Section {{ tab_index1 }} of {{ tab_total }}</div>
-        {% endif %}
-        {% if section_title and section_title != "" %}
-          <h2 class="section-title">{{ section_title }}</h2>
-        {% endif %}
-        {% if section_desc and section_desc != "" %}
-          <p class="section-desc">{{ section_desc }}</p>
-        {% endif %}
-
-        {% if section_summary and section_summary != "" %}
-          <div class="thesis">{{ section_summary }}</div>
-        {% endif %}
-
-        <div class="content">
-          {{ content }}
-        </div>
-
-        {% if page.mindset_cards %}
-          <div class="divider"></div>
-          <div class="mindset-label">{{ page.mindset_label | default: "Mindset" }}</div>
-          <div class="mindset-cards">
-            {% for c in page.mindset_cards %}
-              {% assign icon_bg = c.icon_bg | default: "var(--purple-bg)" %}
-              {% assign icon_text = c.icon_text | default: "var(--purple-text)" %}
-              <div class="mindset-card">
-                <div class="mindset-icon" style="background: {{ icon_bg }}; color: {{ icon_text }};">{{ c.icon | default: "◦" }}</div>
-                <div class="mindset-title">{{ c.title }}</div>
-                <div class="mindset-body">{{ c.body }}</div>
-              </div>
+        <nav class="section-nav" aria-label="Primary navigation">
+          <ul>
+            {% for link in site.data.navigation.main %}
+              {% assign current = false %}
+              {% if page.url == link.url %}{% assign current = true %}{% endif %}
+              {% if page.one_page and link.anchor == "about" %}{% assign current = true %}{% endif %}
+              <li>
+                <a class="section-nav__link{% if current %} is-active{% endif %}" data-section-link href="{{ base_path }}/#{{ link.anchor }}"{% if current %} aria-current="location"{% endif %}>{{ link.title }}</a>
+              </li>
             {% endfor %}
+          </ul>
+        </nav>
+
+        <div class="rail-footer">
+          <div class="social-links" aria-label="Contact links">
+            {% if site.author.email %}<a href="mailto:{{ site.author.email | strip }}">Email</a>{% endif %}
+            {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
+            {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
+            {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>{% endif %}
           </div>
-        {% endif %}
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+            <span class="theme-toggle__icon" aria-hidden="true"></span><span data-theme-label>Dark mode</span>
+          </button>
+        </div>
+      </aside>
 
-        {% if tab_found %}
-          {% comment %}
-            Prev/next + dots
-          {% endcomment %}
-          {% assign prev_index0 = tab_index0 | minus: 1 %}
-          {% assign next_index0 = tab_index0 | plus: 1 %}
-          {% assign prev_url = "" %}
-          {% assign next_url = "" %}
-          {% if prev_index0 >= 0 %}
-            {% assign prev_url = tab_urls[prev_index0] %}
+      <main class="site-content" id="content"{% if page.one_page %} data-one-page{% endif %}>
+        <details class="section-menu" id="section-menu">
+          <summary>Sections</summary>
+          <nav aria-label="Section navigation">
+            {% for link in site.data.navigation.main %}
+              <a data-section-link href="{{ base_path }}/#{{ link.anchor }}">{{ link.title }}</a>
+            {% endfor %}
+          </nav>
+        </details>
+
+        {% if page.one_page %}
+          {% include sections/home.html %}
+        {% else %}
+          {% assign is_primary_page = false %}
+          {% for link in site.data.navigation.main %}
+            {% if page.url == link.url %}{% assign is_primary_page = true %}{% endif %}
+          {% endfor %}
+
+          {% if is_primary_page %}
+            {% if page.url == "/industry-experience/" %}{% include sections/industry.html %}
+            {% elsif page.url == "/research-experience/" %}{% include sections/research.html %}
+            {% elsif page.url == "/publications/" %}{% include sections/publications.html %}
+            {% elsif page.url == "/portfolio/" %}{% include sections/projects.html %}
+            {% elsif page.url == "/skills/" %}{% include sections/skills.html %}
+            {% elsif page.url == "/education/" %}{% include sections/education.html %}
+            {% elsif page.url == "/takeaways/" %}{% include sections/takeaways.html %}
+            {% elsif page.url == "/talks/" %}{% include sections/talks.html %}
+            {% else %}{{ content }}{% endif %}
+          {% else %}
+            {% assign parent_anchor = "" %}
+            {% assign parent_title = "" %}
+            {% if page.collection == "portfolio" %}{% assign parent_anchor = "projects" %}{% assign parent_title = "Projects" %}{% endif %}
+            {% if page.collection == "talks" %}{% assign parent_anchor = "talks-activities" %}{% assign parent_title = "Talks & Activities" %}{% endif %}
+            {% if page.collection == "takeaways" %}{% assign parent_anchor = "takeaways" %}{% assign parent_title = "Beining’s takeaway" %}{% endif %}
+            <article class="detail-page">
+              {% if parent_anchor != "" %}<a class="back-link" href="{{ base_path }}/#{{ parent_anchor }}">← Back to {{ parent_title }}</a>{% endif %}
+              <h1 class="detail-page__title">{{ page.title }}</h1>
+              <div class="content">{{ content }}</div>
+            </article>
           {% endif %}
-          {% if next_index0 < tab_total %}
-            {% assign next_url = tab_urls[next_index0] %}
-          {% endif %}
-
-          <div class="nav-row" aria-label="Section navigation">
-            {% if prev_url != "" %}
-              <a class="arrow-btn" href="{{ base_path }}{{ prev_url }}">← prev</a>
-            {% else %}
-              <span class="arrow-btn disabled" aria-disabled="true">← prev</span>
-            {% endif %}
-
-            <div class="progress-dots" aria-label="Progress">
-              {% for u in tab_urls %}
-                <a class="dot{% if forloop.index0 == tab_index0 %} active{% endif %}" href="{{ base_path }}{{ u }}" aria-label="Go to section {{ forloop.index }}"></a>
-              {% endfor %}
-            </div>
-
-            {% if next_url != "" %}
-              <a class="arrow-btn" href="{{ base_path }}{{ next_url }}">next →</a>
-            {% else %}
-              <span class="arrow-btn disabled" aria-disabled="true">next →</span>
-            {% endif %}
-          </div>
         {% endif %}
-      </div>
-
+      </main>
     </div>
 
     {% include scripts.html %}
-    <script>
-      (function () {
-        const emailLink = document.querySelector(".follow-item--email");
-        const feedback = document.getElementById("follow-feedback");
-        if (!emailLink) return;
-
-        const copyText = async (text) => {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(text);
-            return true;
-          }
-
-          const input = document.createElement("input");
-          input.value = text;
-          input.setAttribute("readonly", "");
-          input.style.position = "absolute";
-          input.style.left = "-9999px";
-          document.body.appendChild(input);
-          input.select();
-          const copied = document.execCommand("copy");
-          document.body.removeChild(input);
-          return copied;
-        };
-
-        let feedbackTimer = null;
-        const showFeedback = (message) => {
-          if (!feedback) return;
-          feedback.textContent = message;
-          feedback.classList.add("is-visible");
-          window.clearTimeout(feedbackTimer);
-          feedbackTimer = window.setTimeout(() => {
-            feedback.classList.remove("is-visible");
-            feedback.textContent = "";
-          }, 2200);
-        };
-
-        emailLink.addEventListener("click", async (event) => {
-          event.preventDefault();
-          const email = emailLink.dataset.email;
-          if (!email) return;
-
-          const copied = await copyText(email).catch(() => false);
-          showFeedback(copied ? "Email copied. Opening mail app..." : "Opening mail app...");
-          window.location.href = "mailto:" + email;
-        });
-      })();
-    </script>
   </body>
 </html>

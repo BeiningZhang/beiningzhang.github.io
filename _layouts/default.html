@@ -15,6 +15,9 @@ layout: compress
     <div class="site-frame">
       <aside class="site-rail" aria-label="Site identity and navigation">
         <div class="identity">
+          {% if site.author.avatar %}
+            <img class="profile-photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="Portrait of {{ site.title }}" />
+          {% endif %}
           <div class="identity__copy">
             <h1 class="identity__name">{{ site.title }}</h1>
             <p class="identity__role">{{ site.author.name }}</p>

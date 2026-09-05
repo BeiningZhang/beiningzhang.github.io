@@ -1,0 +1,6 @@
+<section class="site-section" id="publications">
+  <h2 class="section-heading">发表成果</h2>
+  {% for post in site.publications reversed %}
+    {% include archive-single-publication-no-link.html %}
+  {% endfor %}
+</section>

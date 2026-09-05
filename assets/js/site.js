@@ -15,9 +15,10 @@
     root.dataset.theme = theme;
     if (!themeToggle) return;
     const isDark = theme === "dark";
+    const isChinese = root.lang === "zh-CN";
     themeToggle.setAttribute("aria-pressed", String(isDark));
-    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-    themeToggle.querySelector("[data-theme-label]").textContent = isDark ? "Light mode" : "Dark mode";
+    themeToggle.setAttribute("aria-label", isChinese ? (isDark ? "切换至浅色模式" : "切换至深色模式") : (isDark ? "Switch to light mode" : "Switch to dark mode"));
+    themeToggle.querySelector("[data-theme-label]").textContent = isChinese ? (isDark ? "浅色模式" : "深色模式") : (isDark ? "Light mode" : "Dark mode");
   }
 
   applyTheme(root.dataset.theme === "dark" ? "dark" : "light");

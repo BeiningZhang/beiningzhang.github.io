@@ -62,6 +62,11 @@ body.has-pointer::before { opacity: 1; }
 .theme-toggle:hover { color: var(--text); }
 .theme-toggle__icon::before { content: "◐"; }
 html[data-theme="dark"] .theme-toggle__icon::before { content: "☀"; }
+.language-switch { display: flex; align-items: center; gap: .35rem; color: var(--subtle); font-size: .8rem; font-weight: 600; }
+.language-switch a { color: var(--subtle); }
+.language-switch a:hover { color: var(--text); }
+.language-switch [aria-current="page"] { color: var(--text); }
+html[lang="zh-CN"] body { font-family: "Noto Sans SC", "Inter", system-ui, sans-serif; }
 
 .site-content { min-width: 0; padding: clamp(3rem, 10vh, 8.75rem) 0 5rem; }
 .site-section { scroll-margin-top: 2rem; padding: 0 0 clamp(7rem, 16vh, 12rem); }

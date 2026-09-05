@@ -15,7 +15,7 @@
         {{ title }}
       {% endif %}
     </h2>
-    {% if post.collection == 'publications' %}<p class="archive__item-excerpt">Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>{% endif %}
-    {% if post.pub_type %}<p class="pubs__meta"><span class="pub-chip">{{ post.pub_type | capitalize }}</span><span class="pub-chip">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span></p>{% endif %}
+    {% if post.collection == 'publications' %}<p class="archive__item-excerpt">{% if page.lang == "zh" %}发表于{% else %}Published in{% endif %} <i>{{ post.venue }}</i>，{{ post.date | default: "1900-01-01" | date: "%Y" }}</p>{% endif %}
+    {% if post.pub_type %}<p class="pubs__meta"><span class="pub-chip">{% if page.lang == "zh" %}{% case post.pub_type %}{% when "journal" %}期刊{% when "preprint" %}预印本{% when "conference" %}会议论文{% when "workshop" %}工作坊{% else %}{{ post.pub_type }}{% endcase %}{% else %}{{ post.pub_type | capitalize }}{% endif %}</span><span class="pub-chip">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span></p>{% endif %}
   </article>
 </div>

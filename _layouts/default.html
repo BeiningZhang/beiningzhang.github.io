@@ -2,91 +2,123 @@
 layout: compress
 ---
 {% include base_path %}
+{% assign is_zh = false %}
+{% if page.lang == "zh" %}{% assign is_zh = true %}{% endif %}
+{% assign navigation = site.data.navigation.main %}
+{% if is_zh %}{% assign navigation = site.data.navigation.zh %}{% endif %}
 <!doctype html>
-<html lang="{{ site.locale | slice: 0, 2 }}" class="no-js" data-theme="light">
+<html lang="{% if is_zh %}zh-CN{% else %}{{ site.locale | slice: 0, 2 }}{% endif %}" class="no-js" data-theme="light">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
   <body>
     {% include browser-upgrade.html %}
-    <a class="skip-link" href="#content">Skip to content</a>
+    <a class="skip-link" href="#content">{% if is_zh %}跳至内容{% else %}Skip to content{% endif %}</a>
 
     <div class="site-frame">
-      <aside class="site-rail" aria-label="Site identity and navigation">
+      <aside class="site-rail" aria-label="{% if is_zh %}网站信息与导航{% else %}Site identity and navigation{% endif %}">
         <div class="identity">
           {% if site.author.avatar %}
-            <img class="profile-photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="Portrait of {{ site.title }}" />
+            <img class="profile-photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{% if is_zh %}{{ site.title }}的肖像{% else %}Portrait of {{ site.title }}{% endif %}" />
           {% endif %}
           <div class="identity__copy">
-            <h1 class="identity__name">{{ site.title }}</h1>
-            <p class="identity__role">{{ site.author.name }}</p>
-            <p class="identity__bio">{{ site.author.bio | default: site.description }}</p>
+            <h1 class="identity__name">{% if is_zh %}张倍宁{% else %}{{ site.title }}{% endif %}</h1>
+            <p class="identity__role">{% if is_zh %}AI 工程师与研究者{% else %}{{ site.author.name }}{% endif %}</p>
+            <p class="identity__bio">{% if is_zh %}专注于为金融和健康领域构建可信赖 AI 系统的 AI/ML 工程师与研究者。{% else %}{{ site.author.bio | default: site.description }}{% endif %}</p>
           </div>
         </div>
 
-        <nav class="section-nav" aria-label="Primary navigation">
+        <nav class="section-nav" aria-label="{% if is_zh %}主导航{% else %}Primary navigation{% endif %}">
           <ul>
-            {% for link in site.data.navigation.main %}
+            {% for link in navigation %}
               {% assign current = false %}
               {% if page.url == link.url %}{% assign current = true %}{% endif %}
               {% if page.one_page and link.anchor == "about" %}{% assign current = true %}{% endif %}
               <li>
-                <a class="section-nav__link{% if current %} is-active{% endif %}" data-section-link href="{{ base_path }}/#{{ link.anchor }}"{% if current %} aria-current="location"{% endif %}>{{ link.title }}</a>
+                <a class="section-nav__link{% if current %} is-active{% endif %}" data-section-link href="{{ base_path }}{{ link.url }}#{{ link.anchor }}"{% if current %} aria-current="location"{% endif %}>{{ link.title }}</a>
               </li>
             {% endfor %}
           </ul>
         </nav>
 
         <div class="rail-footer">
-          <div class="social-links" aria-label="Contact links">
-            {% if site.author.email %}<a href="mailto:{{ site.author.email | strip }}">Email</a>{% endif %}
+          <div class="social-links" aria-label="{% if is_zh %}联系方式{% else %}Contact links{% endif %}">
+            {% if site.author.email %}<a href="mailto:{{ site.author.email | strip }}">{% if is_zh %}邮箱{% else %}Email{% endif %}</a>{% endif %}
             {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
             {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
-            {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>{% endif %}
+            {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">{% if is_zh %}学术主页{% else %}Scholar{% endif %}</a>{% endif %}
           </div>
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
-            <span class="theme-toggle__icon" aria-hidden="true"></span><span data-theme-label>Dark mode</span>
+          <div class="language-switch" aria-label="{% if is_zh %}语言{% else %}Language{% endif %}">
+            {% if is_zh %}<a href="{{ page.english_url | default: '/' }}">English</a><span aria-hidden="true">/</span><span aria-current="page">中文</span>{% else %}<span aria-current="page">English</span><span aria-hidden="true">/</span><a href="{{ base_path }}/zh/">中文</a>{% endif %}
+          </div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="{% if is_zh %}切换至深色模式{% else %}Switch to dark mode{% endif %}">
+            <span class="theme-toggle__icon" aria-hidden="true"></span><span data-theme-label>{% if is_zh %}深色模式{% else %}Dark mode{% endif %}</span>
           </button>
         </div>
       </aside>
 
       <main class="site-content" id="content"{% if page.one_page %} data-one-page{% endif %}>
         <details class="section-menu" id="section-menu">
-          <summary>Sections</summary>
-          <nav aria-label="Section navigation">
-            {% for link in site.data.navigation.main %}
-              <a data-section-link href="{{ base_path }}/#{{ link.anchor }}">{{ link.title }}</a>
+          <summary>{% if is_zh %}章节{% else %}Sections{% endif %}</summary>
+          <nav aria-label="{% if is_zh %}章节导航{% else %}Section navigation{% endif %}">
+            {% for link in navigation %}
+              <a data-section-link href="{{ base_path }}{{ link.url }}#{{ link.anchor }}">{{ link.title }}</a>
             {% endfor %}
           </nav>
         </details>
 
         {% if page.one_page %}
-          {% include sections/home.html %}
+          {% if is_zh %}{% include sections/zh/home.html %}{% else %}{% include sections/home.html %}{% endif %}
         {% else %}
           {% assign is_primary_page = false %}
-          {% for link in site.data.navigation.main %}
+          {% for link in navigation %}
             {% if page.url == link.url %}{% assign is_primary_page = true %}{% endif %}
           {% endfor %}
 
+          {% if page.section %}{% assign is_primary_page = true %}{% endif %}
+
           {% if is_primary_page %}
-            {% if page.url == "/industry-experience/" %}{% include sections/industry.html %}
-            {% elsif page.url == "/research-experience/" %}{% include sections/research.html %}
-            {% elsif page.url == "/publications/" %}{% include sections/publications.html %}
-            {% elsif page.url == "/portfolio/" %}{% include sections/projects.html %}
-            {% elsif page.url == "/skills/" %}{% include sections/skills.html %}
-            {% elsif page.url == "/education/" %}{% include sections/education.html %}
-            {% elsif page.url == "/takeaways/" %}{% include sections/takeaways.html %}
-            {% elsif page.url == "/talks/" %}{% include sections/talks.html %}
+            {% assign section_key = page.section %}
+            {% if section_key == nil %}
+              {% if page.url == "/industry-experience/" %}{% assign section_key = "industry" %}
+              {% elsif page.url == "/research-experience/" %}{% assign section_key = "research" %}
+              {% elsif page.url == "/publications/" %}{% assign section_key = "publications" %}
+              {% elsif page.url == "/portfolio/" %}{% assign section_key = "projects" %}
+              {% elsif page.url == "/skills/" %}{% assign section_key = "skills" %}
+              {% elsif page.url == "/education/" %}{% assign section_key = "education" %}
+              {% elsif page.url == "/takeaways/" %}{% assign section_key = "takeaways" %}
+              {% elsif page.url == "/talks/" %}{% assign section_key = "talks" %}
+              {% endif %}
+            {% endif %}
+            {% if is_zh %}
+              {% if section_key == "industry" %}{% include sections/zh/industry.html %}
+              {% elsif section_key == "research" %}{% include sections/zh/research.html %}
+              {% elsif section_key == "publications" %}{% include sections/zh/publications.html %}
+              {% elsif section_key == "projects" %}{% include sections/zh/projects.html %}
+              {% elsif section_key == "skills" %}{% include sections/zh/skills.html %}
+              {% elsif section_key == "education" %}{% include sections/zh/education.html %}
+              {% elsif section_key == "takeaways" %}{% include sections/zh/takeaways.html %}
+              {% elsif section_key == "talks" %}{% include sections/zh/talks.html %}
+              {% else %}{% include sections/zh/about.html %}{% endif %}
+            {% elsif section_key == "industry" %}{% include sections/industry.html %}
+            {% elsif section_key == "research" %}{% include sections/research.html %}
+            {% elsif section_key == "publications" %}{% include sections/publications.html %}
+            {% elsif section_key == "projects" %}{% include sections/projects.html %}
+            {% elsif section_key == "skills" %}{% include sections/skills.html %}
+            {% elsif section_key == "education" %}{% include sections/education.html %}
+            {% elsif section_key == "takeaways" %}{% include sections/takeaways.html %}
+            {% elsif section_key == "talks" %}{% include sections/talks.html %}
             {% else %}{{ content }}{% endif %}
           {% else %}
             {% assign parent_anchor = "" %}
             {% assign parent_title = "" %}
+            {% if page.parent_anchor %}{% assign parent_anchor = page.parent_anchor %}{% assign parent_title = page.parent_title %}{% endif %}
             {% if page.collection == "portfolio" %}{% assign parent_anchor = "projects" %}{% assign parent_title = "Projects" %}{% endif %}
             {% if page.collection == "talks" %}{% assign parent_anchor = "talks-activities" %}{% assign parent_title = "Talks & Activities" %}{% endif %}
             {% if page.collection == "takeaways" %}{% assign parent_anchor = "takeaways" %}{% assign parent_title = "Beining’s takeaway" %}{% endif %}
             <article class="detail-page">
-              {% if parent_anchor != "" %}<a class="back-link" href="{{ base_path }}/#{{ parent_anchor }}">← Back to {{ parent_title }}</a>{% endif %}
+              {% if parent_anchor != "" %}<a class="back-link" href="{% if is_zh %}{{ base_path }}/zh/{% else %}{{ base_path }}/{% endif %}#{{ parent_anchor }}">← {% if is_zh %}返回{{ parent_title }}{% else %}Back to {{ parent_title }}{% endif %}</a>{% endif %}
               <h1 class="detail-page__title">{{ page.title }}</h1>
               <div class="content">{{ content }}</div>
             </article>

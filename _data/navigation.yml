@@ -58,3 +58,32 @@ main:
     
   # - title: "Guide"
   #   url: /markdown/
+
+zh:
+  - title: "关于我"
+    url: /zh/
+    anchor: about
+  - title: "行业经历"
+    url: /zh/
+    anchor: industry-experience
+  - title: "研究经历"
+    url: /zh/
+    anchor: research-experience
+  - title: "发表成果"
+    url: /zh/
+    anchor: publications
+  - title: "项目"
+    url: /zh/
+    anchor: projects
+  - title: "技能"
+    url: /zh/
+    anchor: skills
+  - title: "教育经历"
+    url: /zh/
+    anchor: education
+  - title: "我的观点"
+    url: /zh/
+    anchor: takeaways
+  - title: "演讲与活动"
+    url: /zh/
+    anchor: talks-activities

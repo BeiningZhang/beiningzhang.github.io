@@ -1,0 +1,13 @@
+<section class="site-section" id="publications">
+  <h2 class="section-heading">Publications</h2>
+  {% if site.publication_category %}
+    {% for category in site.publication_category %}
+      {% for post in site.publications reversed %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
+        {% include archive-single-publication-no-link.html %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% for post in site.publications reversed %}{% include archive-single-publication-no-link.html %}{% endfor %}
+  {% endif %}
+</section>

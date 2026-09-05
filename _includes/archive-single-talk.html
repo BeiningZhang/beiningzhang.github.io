@@ -1,48 +1,12 @@
 {% include base_path %}
-
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
-
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a>
-        {% if post.date %}
-          <span class="pill">{{ post.date | date: "%b %Y" }}</span>
-        {% endif %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-        {% if post.date %}
-          <span class="pill">{{ post.date | date: "%b %Y" }}</span>
-        {% endif %}
-      {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.venue and post.show_event_line != false %}<p class="archive__item-excerpt" itemprop="description">{{post.type}}, {{ post.venue }},  {{post.location}} {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+<div class="list__item">
+  <article class="timeline-item" itemscope itemtype="http://schema.org/CreativeWork">
+    <div class="timeline-item__date">{{ post.date | date: "%b %Y" }}</div>
+    <div class="timeline-item__body">
+      <h2 class="archive__item-title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }} <span aria-hidden="true">↗</span></a></h2>
+      {% if post.venue and post.show_event_line != false %}<p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}</p>{% endif %}
+      {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+      {% if post.type %}<div class="tag-list"><span class="tag">{{ post.type }}</span></div>{% endif %}
+    </div>
   </article>
 </div>

@@ -16,6 +16,14 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/profile.css?v={{ site.time | date: '%s' }}">
+<script>
+  try {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  } catch (error) {}
+</script>
+<link rel="stylesheet" href="{{ base_path }}/assets/css/site.css?v={{ site.time | date: '%s' }}">
 
 <meta http-equiv="cleartype" content="on">

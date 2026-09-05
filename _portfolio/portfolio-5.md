@@ -8,7 +8,7 @@ High-level overview of production work (no proprietary details):
 
 - Built an adviser workflow for reviewing AI-generated buyer recommendations, preserving the generated score while recording attributable human overrides, recommendations, and reasons.
 - Anchored generated candidates, reviewer feedback, and manual additions to canonical company identity, with ambiguity and duplicate handling that avoids unsafe automatic matches.
-- Consolidated separate workflow-stage lists into one project-scoped buyer universe with provenance, deterministic presentation, and durable unresolved candidates.
+- Reconciled and migrated separate workflow-stage lists and legacy company fields into one project-scoped buyer universe with provenance, deterministic presentation, and durable unresolved candidates.
 - Kept cross-service mutations reliable through one authoritative write owner, transactional persistence, typed conflicts, and idempotent retry behaviour.
 - Added a single find-or-create flow so advisers can extend incomplete company data without leaving the decision workflow or losing auditability.
 

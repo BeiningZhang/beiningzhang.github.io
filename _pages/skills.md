@@ -16,7 +16,7 @@ author_profile: false
       <span class="pub-chip">Python</span><span class="pub-chip">Django</span><span class="pub-chip">LLMs</span><span class="pub-chip">RAG</span><span class="pub-chip">Prompt Engineering</span><span class="pub-chip">Evaluation Harnesses</span><span class="pub-chip">Monitoring</span><span class="pub-chip">Citations</span>
     </p>
     <p>
-      <span class="pub-chip">Claim-first Retrieval</span><span class="pub-chip">Answer Grounding</span><span class="pub-chip">Router Design</span><span class="pub-chip">Multi-provider AI Clients</span><span class="pub-chip">Azure OpenAI</span><span class="pub-chip">AWS Bedrock</span>
+      <span class="pub-chip">Claim-first Retrieval</span><span class="pub-chip">Answer Grounding</span><span class="pub-chip">Source-grounded Generation</span><span class="pub-chip">Router Design</span><span class="pub-chip">Multi-provider AI Clients</span><span class="pub-chip">Azure OpenAI</span><span class="pub-chip">AWS Bedrock</span>
     </p>
   </article>
 
